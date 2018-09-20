@@ -1,10 +1,15 @@
 # Учебный шаблон проекта Portfolio
+# Студент: 'Шелудешев Артём'
+# Наставник: 'Болотова Ольга'
+# Дизайн: 'forest'
+# Дата_начала_обучения: '17.09.2018'
+# Дата_окончания_обучения: '22.10.2018'
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/)
 
 ##  Чтобы развернуть проект необходимо:
 ```sh
-$ git clone git@github.com:loftschool/advanced-boilerplate.git
+$ git clone https://github.com/7evenUp/Forest.git
 $ cd advanced-boilerplate
 $ npm install
 ```
