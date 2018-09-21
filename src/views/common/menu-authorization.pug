@@ -1,0 +1,29 @@
+//- .menu-authorization
+//-   h2.menu__heading Авторизуйтесь
+//-   form.menu__form(method="post" action="")
+//-     fieldset.menu__fieldset
+//-       .menu__text-overlay
+//-         label.menu__text-label(for="menu__login")
+//-           +icon('login', 'menu__input-icon')
+//-         input.menu__text-input#menu__login(type="text", name="login", placeholder="Логин")
+//-       .menu__text-overlay
+//-         label.menu__text-label(for="menu__password")
+//-           +icon('password', 'menu__input-icon')
+//-         input.menu__text-input#menu__password(type="password", name="password", placeholder="Пароль")
+//-     fieldset.menu__fieldset
+//-       input.menu__checkbox-input#menu__checkbox(type="checkbox")
+//-       label.menu__checkbox-label(for="menu__checkbox") Я человек
+//-         +icon('check', 'menu__checkbox-label__icon')
+//-     fieldset.menu__fieldset
+//-       p.menu__fieldset-radio__text Вы точно не робот?
+//-       .menu__radio-overlay
+//-         input.menu__radio-input#menu__radio-true(type="radio" name="isNotRobot" value="true")
+//-         label.menu__radio-label(for="menu__radio-true") Да
+//-       .menu__radio-overlay
+//-         input.menu__radio-input#menu__radio-false(type="radio" name="isNotRobot" value="false")
+//-         label.menu__radio-label(for="menu__radio-false") Не уверен
+//-   nav.menu__nav
+//-     ul.menu__navigation
+//-       each item, index in ['На главную', 'Войти']
+//-         li.menu__navigation__list
+//-           a.menu__navigation__link(href=links[index])= item

@@ -1,6 +1,64 @@
 extends ../auth.layout.pug
 
 block content
-  .hello-world
-    +icon('check', 'hello-world__block')
-    .inlined-svg
+  - var links = ['my-works.html', 'about.html', 'blog.html'];
+  - var socials = ['https://vk.com/aptem_oxa', 'https://github.com/7evenUp', 'https://www.instagram.com/7_even_up/'];
+
+  section.welcome-section.section
+    header.welcome-header
+      button.auth-button(type="button") Авторизоваться
+
+    main.main
+      .menu
+        .menu-preview.menu-preview--active
+          +image('content/user.jpg', 'my photo', 'menu__user-image')
+          h2.menu__name Артём Шелудешев
+          p.menu__text Личный сайт веб-разработчика
+          .menu__socials
+            each icon, index in ['vk', 'github', 'in']
+              a.menu__socials__link(href= socials[index], target="_blank")
+                +icon(icon, 'menu__socials__item')
+          nav.menu__nav
+            ul.menu__navigation
+              each item, index in ['Мои работы', 'Обо мне', 'Блог']
+                li.menu__navigation__list
+                  a.menu__navigation__link(href=links[index])= item
+        
+        
+        .menu-authorization
+          h2.menu__heading Авторизуйтесь
+          form.menu__form(method="post" action="")
+            fieldset.menu__fieldset
+              .menu__text-overlay
+                label.menu__text-label(for="menu__login")
+                  +icon('login', 'menu__input-icon')
+                input.menu__text-input#menu__login(type="text", name="login", placeholder="Логин")
+              .menu__text-overlay
+                label.menu__text-label(for="menu__password")
+                  +icon('password', 'menu__input-icon')
+                input.menu__text-input#menu__password(type="password", name="password", placeholder="Пароль")
+            fieldset.menu__fieldset
+              input.menu__checkbox-input#menu__checkbox(type="checkbox")
+              label.menu__checkbox-label(for="menu__checkbox") Я человек
+                +icon('check', 'menu__checkbox-label__icon')
+            fieldset.menu__fieldset
+              p.menu__fieldset-radio__text Вы точно не робот?
+              .menu__radio-overlay
+                input.menu__radio-input#menu__radio-true(type="radio" name="isNotRobot" value="true")
+                label.menu__radio-label(for="menu__radio-true") Да
+              .menu__radio-overlay
+                input.menu__radio-input#menu__radio-false(type="radio" name="isNotRobot" value="false")
+                label.menu__radio-label(for="menu__radio-false") Не уверен
+          nav.menu__nav
+            ul.menu__navigation
+              li.menu__navigation__list
+                button.menu__navigation__button(type="button") На главную
+              li.menu__navigation__list
+                button.menu__navigation__button(type="submit") Войти
+
+
+
+
+    footer.footer-container
+      .copyright
+        p.copyright__text &copy; Шелудешев Артём | создано с любовью в Loftschool | 2018

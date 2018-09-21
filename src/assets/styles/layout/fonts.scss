@@ -8,3 +8,36 @@
   font-style: normal;
   font-display: block;
 }
+@font-face {
+  font-family: 'Sansus Webissimo';
+  src: url('/assets/fonts/SansusWebissimo.woff2') format('woff2'),
+  url('/assets/fonts/SansusWebissimo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@mixin bernier() {
+  font-family: 'bernier', Times, serif;
+}
+
+@mixin sansus() {
+  font-family: 'Sansus Webissimo', Arial, sans-serif;
+}
+
+@mixin roboto($style: 'regular') {
+  font-family: 'Roboto', Helvetica, sans-serif;
+
+  @if $style=='regular' {
+    font-weight: 400;
+  }
+  @if $style=='light' {
+    font-weight: 300;
+  }
+  @if $style=='medium' {
+    font-weight: 500;
+  }
+  @if $style=='bold' {
+    font-weight: 700
+  }
+}
