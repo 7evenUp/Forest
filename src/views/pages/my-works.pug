@@ -1,0 +1,75 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы';
+
+block scripts
+  script(src="works.bundle.js")
+
+block content
+  include ../common/header.pug
+  section.works
+    .works__title.title-block
+      +icon('works_header', 'title-icon')
+      h2.title Мои работы
+    .works__content
+      .works__col
+        .work-desc
+          .work-desc__name
+            h3.subtitle
+              != 'Сайт школы онлайн<br> образования'
+          .work-desc__technologies
+            p.technologies HTML, CSS, JavaScript
+          .work-desc__btn
+            a.check-btn
+              +icon('link', 'check-btn__icon')
+              span.check-btn__text Посмотреть сайт
+
+      .works__col
+        .works-slider
+          .works-slider__current-item
+            +image('./content/work-1.png', 'Photo of site', 'works-slider__current-image')
+          .works-slider__toggle-block
+            button.works-slider__toggle-item.works-slider__previous-item
+              +image('./content/work-1.png', 'Photo of site', 'works-slider__toggle-image works-slider__previous-image')
+              .item-btn.previous-btn
+                +icon('portf_arrow_down', 'portfolio-arrow')
+            button.works-slider__toggle-item.works-slider__next-item
+              +image('./content/work-1.png', 'Photo of site', 'works-slider__toggle-image works-slider__next-image')
+              .item-btn.next-btn
+                +icon('portf_arrow_up', 'portfolio-arrow')
+
+  section.criticism
+    .criticism__title.title-block
+      +icon('about_header', 'title-icon title-icon--doubled')
+      h2.title
+        != 'Что обо мне<br> говорят'
+    .criticism__block
+      .critic
+        .critic__image-block
+          +image('./content/critic-1.png', 'Critic image', 'critic__image')
+        .critic__talk
+          p.critic__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        .critic__info
+          p.critic__name Ковальчук Дмитрий
+          p.critic__post — основатель LoftSchool
+      .critic
+        .critic__image-block
+          +image('./content/critic-2.png', 'Critic image', 'critic__image')
+        .critic__talk
+          p.critic__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+        .critic__info
+          p.critic__name Сабанцев Владимир
+          p.critic__post — преподаватель
+
+    .contact-form
+      .contact-form__title
+        h3.subtitle Связаться со мной
+      input.contact-form__input(type="text", placeholder="Имя")
+      input.contact-form__input(type="email", placeholder="Email")
+      textarea.contact-form__textarea(type="email", placeholder="Ваше сообщение")
+      .contact-form__menu
+        button.contact-form__btn.contact-form__btn--submit(type="sumbit") Отправить
+        button.contact-form__btn.contact-form__btn--reset(type="reset") Очистить
+    .criticism__down-btn.down-btn
+      +icon('arrow_down', 'down-arrow down-arrow--rotated')

@@ -2,7 +2,6 @@ extends ../auth.layout.pug
 
 block content
   - var links = ['my-works.html', 'about.html', 'blog.html'];
-  - var socials = ['https://vk.com/aptem_oxa', 'https://github.com/7evenUp', 'https://www.instagram.com/7_even_up/'];
 
   section.welcome-section.section
     header.welcome-header
@@ -11,13 +10,9 @@ block content
     main.main
       .menu
         .menu-preview.menu-preview--active
-          +image('content/user.jpg', 'my photo', 'menu__user-image')
-          h2.menu__name Артём Шелудешев
-          p.menu__text Личный сайт веб-разработчика
+          include ../common/hero-desc.pug
           .menu__socials
-            each icon, index in ['vk', 'github', 'in']
-              a.menu__socials__link(href= socials[index], target="_blank")
-                +icon(icon, 'menu__socials__item')
+            +socials('auth', ['https://vk.com/aptem_oxa', 'https://github.com/7evenUp', 'https://www.instagram.com/7_even_up/'])
           nav.menu__nav
             ul.menu__navigation
               each item, index in ['Мои работы', 'Обо мне', 'Блог']

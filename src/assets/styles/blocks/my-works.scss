@@ -1,0 +1,280 @@
+.works {
+  min-height: 100vh;
+
+  &__title {
+    margin-top: 55px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 60px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      background: #ebefe2;
+
+      @media (min-width: 1200px) {
+        flex-wrap: nowrap;
+        background: linear-gradient(to right, #ebefe2 50%, #e1e4d7 0);
+      }
+    }
+  }
+
+  &__col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 50%;
+  }
+}
+
+.work-desc {
+  text-align: center;
+
+  &__name {
+    margin-bottom: 50px;
+  }
+
+  &__technologies {
+    margin-bottom: 60px;
+  }
+
+  &__btn {
+    text-align: center;
+  }
+}
+.technologies {
+  color: $dark-green;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.check-btn {
+  background-color: $dark-green;
+  transition: all 0.35s;
+  padding: 13px 18px;
+  border-radius: 25px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $dim-green;
+  }
+
+  &__icon {
+    fill: $white;
+    width: 20px;
+    height: 19px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  &__text {
+    font-weight: 500;
+    color: $white;
+    vertical-align: middle;
+  }
+}
+.works-slider {
+  text-align: center;
+
+  &__current-item {
+    padding: 110px 70px;
+  }
+
+  &__current-image {
+    width: 400px;
+  }
+
+  &__toggle-block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__toggle-item {
+    flex: 1 1 50%;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__previous-item {
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: rgba(80, 80, 80, 0.5);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    &:hover .previous-btn {
+      transform: translateY(30px);
+    }
+  }
+  &__next-item {
+    &::before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: rgba(80, 80, 80, 0.65);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    &:hover .next-btn {
+      transform: translateY(-30px);
+    }
+  }
+
+  &__toggle-image {
+    width: 100%;
+  }
+}
+.item-btn {
+  position: absolute;
+  left: calc(50% - 22px);
+  top: calc(50% - 14px);
+  z-index: 10;
+  transition: all 0.35s;
+}
+.portfolio-arrow {
+  width: 44px;
+  height: 28px;
+  fill: white;
+}
+.criticism {
+  background: url(assets/images/bg/earth.png) no-repeat center bottom, #f4f5f0;
+  background-size: 150%;
+  padding: 60px 0 255px 0;
+
+  &__title {
+    margin: 0 0 60px 0;
+  }
+
+  &__block {
+    width: 820px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.critic {
+  text-align: center;
+  flex: 1 1 50%;
+  padding-top: 25px;
+
+  &__talk {
+    margin: 24px 0;
+  }
+  &__text {
+    text-align: left;
+    color: #5d5a55;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  &__name {
+    color: $dark-green;
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  &__post {
+    color: $text-color;
+    font-style: italic;
+    font-weight: 500;
+  }
+}
+
+.contact-form {
+  border-radius: 5px;
+  background-color: rgba(200, 200, 200, 0.65);
+  min-height: 460px;
+  width: 380px;
+  margin: 70px auto;
+  padding-top: 35px;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 60px;
+  }
+  &__textarea {
+    resize: none;
+    height: 140px;
+  }
+  &__input, &__textarea {
+    margin-bottom: 20px;
+    padding: 15px 18px;
+    width: 90%;
+    border-radius: 25px;
+  }
+  
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    flex: 1 1 50%;
+    color: $white;
+    font-weight: 500;
+    background-color: $dim-green;
+    padding: 11px 30px;
+    transition: all 0.25s;
+    width: 100%;
+    position: relative;
+
+    & + & {
+      border-left: 2px solid #a0b99e;
+    }
+
+    &:hover {
+      background-color: $dark-green;
+      cursor: pointer;
+    }
+
+    &::before {
+      content: '';
+      transform: scaleX(0);
+      transition: all 0.25s;
+      position: absolute;
+      width: 26px;
+      height: 2px;
+      background-color: $white;
+      top: calc(100% - 8px);
+      left: calc(50% - 13px);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+
+    &--submit {
+      border-bottom-left-radius: 5px;
+    }
+    &--reset {
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
+.criticism__down-btn {
+  text-align: center;
+  transform: rotate(180deg);
+}

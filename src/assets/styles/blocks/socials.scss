@@ -1,0 +1,53 @@
+.socials-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.socials-list--header {
+
+}
+.socials-list__item {
+  height: 22px;
+}
+.socials-list__link {
+  height: 22px;
+}
+.socials-list__icon {
+  transition: all 0.25s;
+  height: 24px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.socials-list__icon--vk {
+  width: 31px;
+}
+.socials-list__icon--github {
+  width: 26px;
+}
+.socials-list__icon--in {
+  width: 24px;
+}
+.socials-list--header .socials-list__icon {
+  fill: $white;
+
+  &:hover {
+    fill: $dark-green;
+  }
+}
+.socials-list--auth .socials-list__icon {
+  fill: #8d9a96;
+
+  &:hover {
+    fill: $dark-green;
+  }
+}
+.socials-list--footer .socials-list__icon {
+  fill: #a5afab;
+
+  &:hover {
+    fill: $white;
+  }
+}

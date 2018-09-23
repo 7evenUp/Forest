@@ -1,6 +1,7 @@
 const gulp = require("gulp");
 const config = require("./env.paths.json");
 const env = process.env.NODE_ENV;
+const fs = require("fs");
 
 // плагины галпа отдельно подключать не нужно,
 // используем в пайпе как $gp.имяПлагина (без приставки gulp-)
@@ -60,7 +61,9 @@ gulp.task("pug", () => {
   return gulp
     .src(`${config.VIEWS_DIR}/pages/*.pug`)
     .pipe($gp.plumber())
-    .pipe($gp.pug())
+    .pipe($gp.pug({
+      locals: JSON.parse(fs.readFileSync('./src/assets/styles/variables.json'))
+    }))
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));
 });

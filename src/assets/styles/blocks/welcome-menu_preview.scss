@@ -12,6 +12,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  padding-top: 40px;
 }
 .menu-preview--active {
   transform: rotateY(0deg);
@@ -20,7 +21,7 @@
   border-radius: 50%;
   width: 141px;
   height: 141px;
-  margin: 40px 0 20px 0;
+  margin-bottom: 20px;
 }
 .menu__name {
   color: $white;
@@ -31,25 +32,8 @@
   color: $white;
 }
 .menu__socials {
-  width: 40%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  width: 140px;
   margin: 30px 0 40px 0;
-}
-.menu__socials__link {
-  max-height: 25px;
-}
-.menu__socials__item {
-  width: 25px;
-  height: 25px;
-  fill: #8d9a96;
-  transition: all 0.25s;
-
-  &:hover {
-    fill: $dark-green;
-    cursor: pointer;
-  }
 }
 .menu__nav {
   width: 100%;

@@ -1,0 +1,23 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.user__avatar {
+  border-radius: 50%;
+  width: 141px;
+  height: 141px;
+  margin-bottom: 20px;
+}
+.user__info {
+  text-align: center;
+}
+.user__name {
+  color: $white;
+  font-size: 28px;
+  @include roboto('medium');
+}
+.user__desc {
+  color: $white;
+}

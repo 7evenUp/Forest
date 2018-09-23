@@ -58,3 +58,26 @@ p {
   min-height: 650px;
   height: 100vh;
 }
+input, textarea, button {
+  border: none;
+  outline: none;
+  padding: 0;
+}
+.title-block {
+  position: relative;
+}
+.title-icon {
+  fill: #e2ebd0;
+  position: absolute;
+  width: 600px;
+  height: 200px;
+  left: calc(50% - 275px);
+  top: -125%;
+}
+.title-icon--doubled {
+  top: -32%;
+}
+.title-icon--lighter {
+  fill: #e2ebd0;
+  transform: scale(0.75);
+}

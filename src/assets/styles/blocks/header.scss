@@ -1,0 +1,139 @@
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: $dim-green;
+  background: linear-gradient(to bottom, rgba(0, 0 ,0 , 0.30) 30%, rgba(0, 0 ,0 , 0.0) 80%),
+              url('assets/images/bg/water.jpg') no-repeat center;
+  background-size: cover;
+  padding: 30px 25px 0 25px;
+  clip-path: polygon(0 0, 0 83%, 50% 100%, 100% 83%, 100% 0);
+}
+.header {
+  width: 100%;
+
+  &__socials {
+    width: 140px;
+  }
+}
+.header__menu {
+  top: 30px;
+  right: 2%;
+  width: 40px;
+  height: 35px;
+  position: absolute;
+  z-index: 100;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--active .menu-icon {
+    background-color: transparent;
+
+    &::before {
+      transform: rotate(45deg);
+      margin-top: 0;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      margin-top: 0;
+    }
+  }
+}
+.menu-icon, .menu-icon::before, .menu-icon::after {
+  display: block;
+  width: 40px;
+  height: 5px;
+  background-color: $white;
+  border-radius: 2px;
+  position: absolute;
+  top: calc(50% - 2.5px);
+  transition: all 0.35s;
+}
+.menu-icon {
+  &::before {
+    content: '';
+    margin-top: -12.5px;
+  }
+
+  &::after {
+    content: '';
+    margin-top: 12.5px;
+  }
+}
+.modal-menu {
+  background-color: rgba(108, 156, 90, 0.87);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: all 0.35s;
+
+  &--active {
+    transform: translateX(0);
+  }
+}
+.menu-list {
+  align-items: center;
+
+  &__item {
+    
+  }
+
+  &__link {
+    display: block;
+    color: $white;
+    @include sansus();
+    font-size: 63px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2;
+    position: relative;
+
+    &::before {
+      content: '';
+      transform: scale(0);
+      transition: all 0.25s;
+      position: absolute;
+      width: 89px;
+      height: 3px;
+      background-color: $white;
+      top: calc(100% - 8px);
+      left: calc(50% - 45px);
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
+}
+.hero-container {
+ margin-top: -190px;
+}
+.section-title {
+  display: none;
+}
+.down-btn {
+  margin-bottom: 70px;
+}
+.down-arrow {
+  fill: #c2d4cb;
+  transition: all 0.35s;
+  width: 26px;
+  height: 16px;
+
+  &:hover {
+    fill: $white;
+    cursor: pointer;
+  }
+}
