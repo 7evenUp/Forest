@@ -24,6 +24,7 @@
   height: 35px;
   position: absolute;
   z-index: 100;
+  background-color: transparent;
 
   &:hover {
     cursor: pointer;
@@ -108,7 +109,7 @@
       width: 89px;
       height: 3px;
       background-color: $white;
-      top: calc(100% - 8px);
+      top: calc(100% - 9px);
       left: calc(50% - 45px);
     }
 
@@ -125,6 +126,14 @@
 }
 .down-btn {
   margin-bottom: 70px;
+  background-color: transparent;
+
+  &:focus-within .down-arrow {
+    fill: $white;
+  }
+  &:focus-within {
+    border: 1px solid blue;
+  }
 }
 .down-arrow {
   fill: #c2d4cb;

@@ -1,14 +1,14 @@
 footer.footer
   .footer__row.footer__row_bg_grey
     .footer__col
-      p.footer__col-text Этот сайт я сделал в рамках обучения в Школе онлайн образование LoftSchool.
+      p.footer__col-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
     .footer__col
       .footer__col-links
         .links
           nav.links__navigation
             ul.navigation-list
-              - var links = ['my-works.html', 'blog.html', 'about.html', 'index.html'];
-              each item, index in ['Мои работы', 'Блог', 'Обо мне', 'Авторизация']
+              - var links = ['my-works.html', 'about.html', 'blog.html', 'index.html'];
+              each item, index in ['Мои работы', 'Обо мне', 'Блог', 'Авторизация']
                 li.navigation-list__item
                   a.navigation-list__link(href= links[index]) #{item}
           .links__socials
@@ -20,4 +20,5 @@ footer.footer
 
   .footer__row
     .copyright
-        p.copyright__text &copy; Шелудешев Артём | создано с любовью в Loftschool | 2018
+        p.copyright__text 
+          != '<span class="copyright__creator">&copy; Шелудешев Артём</span> <span class="copyright__barrier">|</span> <span class="copyright__info">создано с любовью в Loftschool | 2018</span>'

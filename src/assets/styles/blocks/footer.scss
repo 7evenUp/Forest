@@ -8,7 +8,11 @@
     justify-content: space-between;
 
     &_bg_grey {
-      background-color: rgba(50, 50, 50, 0.8);;
+      background-color: rgba(30, 30, 30, 0.7);
+
+      @include phone {
+        flex-wrap: wrap;
+      }
     }
   }
 
@@ -17,10 +21,34 @@
     padding: 25px;
     position: relative;
 
+    @include phone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 18px 0 18px 0;
+      flex: 1 1 100%;
+    }
+
     &-text {
       width: 300px;
       font-weight: 300;
       color: $white;
+
+      @include phone {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+
+    &-links {
+      @include phone {
+        text-align: center;
+        width: 90%;
+      }
+    }
+
+    &:nth-child(1)::after {
+      content: none;
     }
 
     &::after {
@@ -31,6 +59,13 @@
       position: absolute;
       top: calc(50% - 44px);
       left: 0;
+
+      @include phone {
+        width: 92%;
+        height: 1px;
+        top: 0;
+        left: 4%;
+      }
     }
   }
 }
@@ -38,11 +73,19 @@
 
   &__navigation {
     width: 85%;
+
+    @include phone {
+      width: 100%;
+    }
   }
 
   &__socials {
     width: 140px;
     margin-top: 20px;
+
+    @include phone {
+      margin: 10px auto 0 auto;
+    }
   }
 }
 
@@ -50,21 +93,53 @@
   display: flex;
   justify-content: space-between;
 
-  &__item {
+  @include phone {
+    justify-content: space-around;
+  }
 
+  &__item {
+    @include phone {
+    }
   }
 
   &__link {
     color: $white;
     text-decoration: none;
     font-weight: 500;
+    position: relative;
+    display: block;
+    height: 30px;
+    line-height: 30px;
 
-    &:hover {
-      border-bottom: 1px solid $white;
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      background-color: $white;
+      transition: transform 0.25s; 
+      left: 0;
+      top: calc(100% - 2px);
+    }
+
+    @include phone {
+      font-size: 14px;
     }
   }
 }
 .quote {
+
+  @include phone {
+    width: 95%;
+    text-align: center;
+    font-size: 14px;
+  }
+
   &__text {
     font-style: italic;
     color: #a5afab;
@@ -77,4 +152,37 @@
 .footer__row .copyright {
   padding: 8px 0;
   background-color: rgba(130, 170, 115, 0.85);
+
+  &__text {
+    width: 90%;
+    font-weight: 300;
+    font-size: 14px;
+    @include phone {
+      margin: 0 auto;
+    }
+  }
+
+  &__creator {
+    @include phone {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__barrier {
+    @include phone {
+      display: none;
+    }
+  }
+
+  &__info {
+    @include phone {
+      display: block;
+      margin: 0 auto;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
 }

@@ -240,6 +240,10 @@
     width: 100%;
     position: relative;
 
+    &:focus-within {
+      background-color: $dark-green;
+    }
+
     & + & {
       border-left: 2px solid #a0b99e;
     }
@@ -261,7 +265,7 @@
       left: calc(50% - 13px);
     }
 
-    &:hover::before {
+    &:hover::before, &:focus-within::before {
       transform: scaleX(1);
     }
 

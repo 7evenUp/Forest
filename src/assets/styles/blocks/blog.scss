@@ -55,6 +55,14 @@
   &__link {
     text-decoration: none;
     color: $text-color;    
+    background-color: transparent;
+    text-align: right;
+
+    &:focus-within {
+      color: #6c9c5a;
+      border: 1px solid #6c9c5a;
+    }
+
     &--active {
       font-weight: 700;
       color: #4e8839;
