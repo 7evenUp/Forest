@@ -8,48 +8,49 @@ block content
       button.auth-button(type="button") Авторизоваться
 
     main.main
-      .menu
-        .menu-preview.menu-preview--active
+      .card
+        .card-greeting.card-greeting--active
           include ../common/hero-desc.pug
-          .menu__socials
-            +socials('auth', ['https://vk.com/aptem_oxa', 'https://github.com/7evenUp', 'https://www.instagram.com/7_even_up/'])
-          nav.menu__nav
-            ul.menu__navigation
+          .card-greeting__socials
+            +socials('auth')
+          nav.site-navigation
+            ul.site-navigation__list
               each item, index in ['Мои работы', 'Обо мне', 'Блог']
-                li.menu__navigation__list
-                  a.menu__navigation__link(href=links[index])= item
+                li.site-navigation__item
+                  a.site-navigation__link(href=links[index])= item
         
-        
-        .menu-authorization
-          h2.menu__heading Авторизуйтесь
-          form.menu__form(method="post" action="")
-            fieldset.menu__fieldset
-              .menu__text-overlay
-                label.menu__text-label(for="menu__login")
-                  +icon('login', 'menu__input-icon')
-                input.menu__text-input#menu__login(type="text", name="login", placeholder="Логин")
-              .menu__text-overlay
-                label.menu__text-label(for="menu__password")
-                  +icon('password', 'menu__input-icon')
-                input.menu__text-input#menu__password(type="password", name="password", placeholder="Пароль")
-            fieldset.menu__fieldset
-              input.menu__checkbox-input#menu__checkbox(type="checkbox")
-              label.menu__checkbox-label(for="menu__checkbox") Я человек
-                +icon('check', 'menu__checkbox-label__icon')
-            fieldset.menu__fieldset
-              p.menu__fieldset-radio__text Вы точно не робот?
-              .menu__radio-overlay
-                input.menu__radio-input#menu__radio-true(type="radio" name="isNotRobot" value="true")
-                label.menu__radio-label(for="menu__radio-true") Да
-              .menu__radio-overlay
-                input.menu__radio-input#menu__radio-false(type="radio" name="isNotRobot" value="false")
-                label.menu__radio-label(for="menu__radio-false") Не уверен
-          nav.menu__nav
-            ul.menu__navigation
-              li.menu__navigation__list
-                button.menu__navigation__button(type="button") На главную
-              li.menu__navigation__list
-                button.menu__navigation__button(type="submit") Войти
+        .card-auth
+          h2.card-auth__heading Авторизуйтесь
+          .card-auth__form
+            form.auth-form(method="post" action="")
+              fieldset.auth-form__fieldset
+                .auth-form__text--overlay
+                  label.auth-form__text-label(for="auth-form__login")
+                    +icon('login', 'text-input__icon')
+                  input.auth-form__text-input#auth-form__login(type="text", name="login", placeholder="Логин")
+                .auth-form__text--overlay
+                  label.auth-form__text-label(for="auth-form__password")
+                    +icon('password', 'text-input__icon')
+                  input.auth-form__text-input#auth-form__password(type="password", name="password", placeholder="Пароль")
+              fieldset.auth-form__fieldset
+                input.auth-form__checkbox-input#auth-form__checkbox(type="checkbox")
+                label.auth-form__checkbox-label(for="auth-form__checkbox") Я человек
+                  +icon('check', 'checkbox-label__icon')
+              fieldset.auth-form__fieldset
+                legend.fieldset-legend Вы точно не робот?
+                .auth-form__radio--overlay
+                  input.auth-form__radio-input#auth-form__radio-true(type="radio" name="isNotRobot" value="true")
+                  label.auth-form__radio-label(for="auth-form__radio-true") Да
+                .auth-form__radio--overlay
+                  input.auth-form__radio-input#auth-form__radio-false(type="radio" name="isNotRobot" value="false")
+                  label.auth-form__radio-label(for="auth-form__radio-false") Не уверен
+
+          nav.auth-panel
+            ul.auth-panel__list
+              li.auth-panel__item
+                button.auth-panel__button(type="button") На главную
+              li.auth-panel__item
+                button.auth-panel__button(type="submit") Войти
 
 
 

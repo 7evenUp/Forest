@@ -1,6 +1,6 @@
 mixin socials(mod, data)
   ul(class=`socials-list socials-list--${mod}`)
-    each icon, index in ['vk', 'github', 'in']
+    each icon in [['vk', 'https://vk.com/aptem_oxa'], ['github', 'https://github.com/7evenUp'], ['in', 'https://www.instagram.com/7_even_up/']]
       li.socials-list__item
-        a.socials-list__link(href=data[index], target="_blank")
-          +icon(icon, `socials-list__icon socials-list__icon--${icon}`)
+        a.socials-list__link(href=icon[1], target="_blank")
+          +icon(icon[0], `socials-list__icon socials-list__icon--${icon[0]}`)
