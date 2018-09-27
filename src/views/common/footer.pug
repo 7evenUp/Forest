@@ -1,24 +1,25 @@
-footer.footer
-  .footer__row.footer__row_bg_grey
-    .footer__col
-      p.footer__col-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
-    .footer__col
-      .footer__col-links
-        .links
-          nav.links__navigation
-            ul.navigation-list
-              - var links = ['my-works.html', 'about.html', 'blog.html', 'index.html'];
-              each item, index in ['Мои работы', 'Обо мне', 'Блог', 'Авторизация']
-                li.navigation-list__item
-                  a.navigation-list__link(href= links[index]) #{item}
-          .links__socials
-            +socials('footer')
-    .footer__col
-      .quote
-        p.quote__text
-          != 'Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.<span class="quote__author"><br>— Martin Golding</span>'
+mixin footer(mod)
+  footer(class=`footer footer--${mod}`)
+    .footer__row.footer__row_bg_grey
+      .footer__col
+        p.footer__col-text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+      .footer__col
+        .footer__col-links
+          .links
+            nav.links__navigation
+              ul.navigation-list
+                - var links = ['my-works.html', 'about.html', 'blog.html', 'index.html'];
+                each item, index in ['Мои работы', 'Обо мне', 'Блог', 'Авторизация']
+                  li.navigation-list__item
+                    a.navigation-list__link(href= links[index]) #{item}
+            .links__socials
+              +socials('footer')
+      .footer__col
+        .quote
+          p.quote__text
+            != 'Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.<span class="quote__author"><br>— Martin Golding</span>'
 
-  .footer__row
-    .copyright
-        p.copyright__text 
-          != '<span class="copyright__creator">&copy; Шелудешев Артём</span> <span class="copyright__barrier">|</span> <span class="copyright__info">создано с любовью в Loftschool | 2018</span>'
+    .footer__row
+      .copyright
+          p.copyright__text 
+            != '<span class="copyright__creator">&copy; Шелудешев Артём</span> <span class="copyright__barrier">|</span> <span class="copyright__info">создано с любовью в Loftschool | 2018</span>'

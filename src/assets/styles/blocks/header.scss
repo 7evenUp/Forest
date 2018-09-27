@@ -131,9 +131,6 @@
   &:focus-within .down-arrow {
     fill: $white;
   }
-  &:focus-within {
-    border: 1px solid blue;
-  }
 }
 .down-arrow {
   fill: #c2d4cb;

@@ -7,7 +7,7 @@ block scripts
   script(src="works.bundle.js")
 
 block content
-  include ../common/header.pug
+  +header('link')
   section.works
     .works__title.title-block
       +icon('works_header', 'title-icon')
@@ -73,3 +73,5 @@ block content
         button.contact-form__btn.contact-form__btn--reset(type="reset") Очистить
     .criticism__down-btn.down-btn
       +icon('arrow_down', 'down-arrow down-arrow--rotated')
+      
+  +footer('works')
