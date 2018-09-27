@@ -51,3 +51,11 @@
     fill: $white;
   }
 }
+.socials-list--footer {
+  @include small-tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+}

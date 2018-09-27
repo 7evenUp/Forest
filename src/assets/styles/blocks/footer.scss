@@ -5,10 +5,18 @@
 
   &__row {
     display: flex;
-    justify-content: space-between;
 
     &_bg_grey {
       background-color: rgba(30, 30, 30, 0.7);
+
+      @include tablet {
+        flex-wrap: wrap;
+      }
+
+      @include small-tablet {
+        flex-wrap: wrap;
+        align-items: center;
+      }
 
       @include phone {
         flex-wrap: wrap;
@@ -21,6 +29,76 @@
     padding: 25px;
     position: relative;
 
+    &:nth-child(1)  {
+      @include desktop {
+        flex-basis: 31%;
+      }
+
+      @include laptop {
+        flex-basis: 28%;
+      }
+
+      @include tablet {
+        flex-basis: 50%;
+      }
+
+      @media (max-width: 700px) and (min-width: 600px) {
+        flex-basis: 34%;
+      }
+
+      @include small-tablet {
+        flex-basis: 100%;
+      }
+    }
+
+    &:nth-child(2) {
+      @include desktop {
+        flex-basis: 38%;
+      }
+
+      @include laptop {
+        flex-basis: 50%;
+      }
+
+      @include tablet {
+        flex-basis: 50%;
+      }
+
+      @include small-tablet {
+        flex-basis: 60%
+      }
+    }
+
+    &:nth-child(3) {
+      @include desktop {
+        flex-basis: 31%;
+      }
+
+      @include laptop {
+        flex-basis: 35%;
+      }
+
+      @include tablet {
+        flex-basis: 100%;
+      }
+
+      @include small-tablet {
+        flex-basis: 40%;
+      }
+    }
+
+    @include desktop {
+      padding: 15px;
+    }
+
+    @include laptop {
+      padding: 13px;
+    }
+
+    @include small-tablet {
+      padding: 10px;
+    }
+
     @include phone {
       display: flex;
       justify-content: center;
@@ -30,9 +108,27 @@
     }
 
     &-text {
-      width: 300px;
+      max-width: 300px;
       font-weight: 300;
       color: $white;
+
+      @include desktop {
+        font-size: 15px;
+      }
+
+      @include laptop {
+        font-size: 14px;
+      }
+
+      @include small-tablet {
+        font-size: 14px;
+        max-width: none;
+        text-align: center;
+      }
+
+      @include phone {
+        font-size: 14px;
+      }
 
       @include phone {
         font-size: 14px;
@@ -43,7 +139,7 @@
     &-links {
       @include phone {
         text-align: center;
-        width: 90%;
+        width: 95%;
       }
     }
 
@@ -72,10 +168,11 @@
 .links {
 
   &__navigation {
-    width: 85%;
-
-    @include phone {
-      width: 100%;
+    width: 100%;
+    
+    @include small-tablet {
+      margin-left: 10px;
+      width: 60%;
     }
   }
 
@@ -83,9 +180,17 @@
     width: 140px;
     margin-top: 20px;
 
+    @include small-tablet {
+      margin: 0;
+    }
+
     @include phone {
       margin: 10px auto 0 auto;
     }
+  }
+
+  @include small-tablet {
+    display: flex;
   }
 }
 
@@ -93,11 +198,20 @@
   display: flex;
   justify-content: space-between;
 
+  @include small-tablet {
+    flex-direction: column;
+  }
+
   @include phone {
     justify-content: space-around;
   }
 
   &__item {
+
+    &:nth-child(1) {
+      margin: 0;
+    }
+
     @include phone {
     }
   }
@@ -127,6 +241,23 @@
       top: calc(100% - 2px);
     }
 
+    @include desktop {
+      font-size: 15px;
+    }
+
+    @include laptop {
+      font-size: 14px;
+    }
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include small-tablet {
+      font-size: 15px;
+      width: max-content;
+    }
+
     @include phone {
       font-size: 14px;
     }
@@ -134,19 +265,36 @@
 }
 .quote {
 
-  @include phone {
-    width: 95%;
-    text-align: center;
-    font-size: 14px;
-  }
-
   &__text {
     font-style: italic;
     color: #a5afab;
   }
+
   &__author {
     font-weight: 700;
     color: #cacfcd;
+  }
+
+  @include desktop {
+    font-size: 15px;
+  }
+
+  @include laptop {
+    font-size: 14px;
+  }
+
+  @include small-tablet {
+    font-size: 14px;
+  }
+
+  @include phone {
+    font-size: 14px;
+  }
+
+  @include phone {
+    width: 95%;
+    text-align: center;
+    font-size: 14px;
   }
 }
 .footer__row .copyright {
@@ -155,11 +303,9 @@
 
   &__text {
     width: 90%;
+    margin: 0 auto;
     font-weight: 300;
     font-size: 14px;
-    @include phone {
-      margin: 0 auto;
-    }
   }
 
   &__creator {
