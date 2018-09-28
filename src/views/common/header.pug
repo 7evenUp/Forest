@@ -1,18 +1,11 @@
 mixin header(mod)
-  button.header__menu
-    .menu-icon
-  .modal-menu
-    ul.menu-list
-      - var links = ['my-works.html', 'blog.html', 'about.html', 'index.html'];
-      each item, index in ['Мои работы', 'Блог', 'Обо мне', 'Авторизация']
-        li.menu-list__item
-          a.menu-list__link(href= links[index]) #{item}
   section.page-header.section
+    +icon(`${mod}_header`, `background-title background-title--${mod}`)
     header.header
       .header__socials
         +socials('header')
     .hero-container
       span.section-title Portfolio
-      include hero-desc.pug
+      +hero(mod)
     button.down-btn
       +icon('arrow_down', 'down-arrow')

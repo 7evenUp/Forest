@@ -1,2 +1,2 @@
-import "./modules/example";
+import "./modules/menu";
 import "./modules/slider"

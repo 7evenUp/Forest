@@ -1,0 +1,139 @@
+.site-menu-btn {
+  top: 30px;
+  right: 2%;
+  width: 40px;
+  height: 35px;
+  position: absolute;
+
+  &:hover {
+    cursor: pointer
+  }
+
+  @include tablet {
+    right: 3%;
+  }
+
+  @include small-tablet {
+    right: 4%;
+  }
+
+  @include phone {
+    width: 26px;
+    height: 23px;
+    top: 18px;
+    right: 5%;
+  }
+}
+.hamburger-menu, .hamburger-menu::before, .hamburger-menu::after {
+  display: block;
+  width: 40px;
+  height: 5px;
+  background-color: $white;
+  border-radius: 2px;
+  position: absolute;
+  top: calc(50% - 2.5px);
+  transition: all 0.35s;
+  z-index: 100;
+
+  @include phone {
+    width: 26px;
+    height: 3px;
+    top: calc(50% - 1.5px);
+  }
+}
+.hamburger-menu {
+  background-color: $white;
+
+  &::before {
+    content: '';
+    margin-top: -12.5px;
+
+    @include phone {
+      margin-top: -11.5px;
+    }
+  }
+  &::after {
+    content: '';
+    margin-top: 12.5px;
+
+    @include phone {
+      margin-top: 11.5px;
+    }
+  }
+
+  &--active {
+    background-color: transparent;
+  }
+
+  &--active::before {
+    transform: rotate(45deg);
+    margin-top: 0;
+  }
+
+  &--active::after {
+    transform: rotate(-45deg);
+    margin-top: 0;
+  }
+}
+.modal-menu {
+  background-color: rgba(108, 156, 90, 0.87);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(130%);
+  transition: all 0.35s;
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__list {
+    align-items: center;
+  }
+
+  &__link {
+    display: block;
+    color: $white;
+    @include sansus();
+    font-size: 63px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2;
+    position: relative;
+
+    &::before {
+      content: '';
+      transform: scale(0);
+      transition: all 0.25s;
+      position: absolute;
+      width: 89px;
+      height: 3px;
+      background-color: $white;
+      top: calc(100% - 9px);
+      left: calc(50% - 45px);
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+
+    @include tablet {
+      font-size: 49px;
+    }
+
+    @include small-tablet {
+      font-size: 45px;
+    }
+
+    @include phone {
+      font-size: 35px;
+    }
+  }
+}

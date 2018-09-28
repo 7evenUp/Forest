@@ -1,0 +1,8 @@
+.site-menu-btn
+  button.hamburger-menu
+  .modal-menu
+    ul.modal-menu__list
+      - var links = ['my-works.html', 'blog.html', 'about.html', 'index.html'];
+      each item, index in ['Мои работы', 'Блог', 'Обо мне', 'Авторизация']
+        li.modal-menu__item
+          a.modal-menu__link(href= links[index]) #{item}

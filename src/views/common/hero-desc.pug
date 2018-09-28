@@ -1,5 +1,13 @@
-.user
-  +image('content/user.jpg', 'user image', 'user__avatar')
-  .user__info
-    h2.user__name Артём Шелудешев
-    span.user__desc Личный сайт веб-разработчика
+mixin hero(conditional)
+  .user
+    +image('content/user.jpg', 'user image', 'user__avatar')
+    .user__info
+      if conditional == 'blog'
+        h2.user__title.title Блог
+        span.user__desc Статьи, которые я написал
+      else if conditional == 'authorization'
+        h2.user__name.user__name_size_smaller Артём Шелудешев
+        span.user__desc Личный сайт веб-разработчика
+      else
+        h2.user__name Артём Шелудешев
+        span.user__desc Личный сайт веб-разработчика

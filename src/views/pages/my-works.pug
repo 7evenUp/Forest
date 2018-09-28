@@ -7,7 +7,7 @@ block scripts
   script(src="works.bundle.js")
 
 block content
-  +header('link')
+  +header('portfolio')
   section.works
     .works__title.title-block
       +icon('works_header', 'title-icon')
@@ -71,7 +71,7 @@ block content
       .contact-form__menu
         button.contact-form__btn.contact-form__btn--submit(type="sumbit") Отправить
         button.contact-form__btn.contact-form__btn--reset(type="reset") Очистить
-    .criticism__down-btn.down-btn
+    button.criticism__down-btn.up-btn
       +icon('arrow_down', 'down-arrow down-arrow--rotated')
       
   +footer('works')

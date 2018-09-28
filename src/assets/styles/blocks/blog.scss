@@ -1,20 +1,3 @@
-.user__title-text {
-  color: $white;
-
-  &.title::before {
-    background-color: $white;
-  }
-}
-.user__title {
-  margin-bottom: 60px;
-}
-.title-icon--header {
-  fill: rgba(255,255,255, 0.15);
-  top: -65%;
-  left: calc(50% - 300px);
-  z-index: -1;
-}
-
 .blog {
   display: flex;
   justify-content: flex-start;

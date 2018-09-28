@@ -1,6 +1,7 @@
 include ./common/_mixins
 include ./common/socials
 include ./common/header
+include ./common/hero-desc
 include ./common/footer
 
 block variables
@@ -18,6 +19,7 @@ html(lang="ru")
     .wrapper
       .maincontent
         block content
+      include ./common/site-menu-btn.pug
 
     script(src='bootloader.bundle.js')
     script(src='vendor.bundle.js')

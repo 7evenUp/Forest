@@ -7,30 +7,7 @@ block scripts
   script(src="blog.bundle.js")
 
 block content
-  .header__menu
-    span.menu-icon
-  .modal-menu
-    ul.menu-list
-      - var links = ['my-works.html', 'blog.html', 'about.html', 'index.html'];
-      each item, index in ['Мои работы', 'Блог', 'Обо мне', 'Авторизация']
-        li.menu-list__item
-          a.menu-list__link(href= links[index]) #{item}
-  section.page-header.section
-    header.header
-      .header__socials
-        +socials('header', ['https://vk.com/aptem_oxa', 'https://github.com/7evenUp', 'https://www.instagram.com/7_even_up/'])
-    .hero-container
-      span.section-title Portfolio
-      .user
-        +image('content/user.jpg', 'user image', 'user__avatar')
-        .user__info
-          .user__title.title-block
-            +icon('blog_header', 'title-icon title-icon--header')
-            h2.user__title-text.title Блог
-          .user__desc Статьи, которые я написал
-    .down-btn
-      +icon('arrow_down', 'down-arrow')
-
+  +header('blog')
   section.blog
     aside.blog__navigation
       nav.articles

@@ -10,7 +10,7 @@ block content
     main.main
       .card
         .card-greeting.card-greeting--active
-          include ../common/hero-desc.pug
+          +hero('authorization')
           .card-greeting__socials
             +socials('auth')
           nav.site-navigation
