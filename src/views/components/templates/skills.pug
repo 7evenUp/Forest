@@ -1,0 +1,23 @@
+script(type="text/x-template")#skills-list
+  ul.skills
+      li.skills__item(v-for="skillsRow in skills" :key="skillsRow.skillsGroup")
+        skills-row(
+          :skills="skillsRow"
+        )
+
+script(type="text/x-template")#skills-item
+  .skills-row
+    b.skills-row__title {{ skills.skillsGroup }}
+    ul.skills-row__list
+      skill(
+        v-for="(skillPercentage, skillTitle) in skills.skills"
+        :title="skillTitle"
+        :percentage="skillPercentage"
+      )
+
+script(type="text/x-template")#skill
+  li.skill
+    svg.skill__figure(viewBox='0 0 110 110', width='110', height='110')
+      circle.skill__under(r='45', cx='50%', cy='50%')
+      circle.skill__above(r='45', cx='50%', cy='50%', ref="circle")
+    span.skill__name(x='50%', y='50%') {{ title }}

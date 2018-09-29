@@ -13,31 +13,33 @@ block content
       +icon('works_header', 'title-icon')
       h2.title Мои работы
     .works__content
-      .works__col
-        .work-desc
-          .work-desc__name
-            h3.subtitle
-              != 'Сайт школы онлайн<br> образования'
-          .work-desc__technologies
-            span.technologies HTML, CSS, JavaScript
-          .work-desc__btn
-            a.check-btn
-              +icon('link', 'check-btn__icon')
-              span.check-btn__text Посмотреть сайт
+      #slider-component
 
-      .works__col
-        .works-slider
-          .works-slider__current-item
-            +image('./content/work-1.png', 'Фото проекта', 'works-slider__current-image')
-          .works-slider__toggle-block
-            button.works-slider__toggle-item.works-slider__previous-item
-              +image('./content/work-1.png', 'Фото проекта', 'works-slider__toggle-image works-slider__previous-image')
-              .item-btn.previous-btn
-                +icon('portf_arrow_down', 'portfolio-arrow')
-            button.works-slider__toggle-item.works-slider__next-item
-              +image('./content/work-1.png', 'Фото проекта', 'works-slider__toggle-image works-slider__next-image')
-              .item-btn.next-btn
-                +icon('portf_arrow_up', 'portfolio-arrow')
+        //- .slider__info-container
+        //-   .slider__info
+        //-     .slider__info-title
+        //-       h3.subtitle Сайт школы онлайн образования
+        //-     .slider__info-technologies
+        //-       span.technologies HTML, CSS, JavaScript
+        //-     .slider__info-button
+        //-       a.visit-button
+        //-         +icon('link', 'visit-button__icon')
+        //-         span.visit-button__text Посмотреть сайт
+
+        //- .slider__current-slide
+        //-   +image('./content/work-1.png', 'Фото проекта', 'slider__current-image')
+
+        //- .slider__switchers
+        //-   button.switcher.switcher--prev
+        //-     .switcher__container
+        //-       .switcher__image-wrap
+        //-         +image('./content/work-1.png', 'Фото проекта', 'switcher__image')
+        //-         +icon('portf_arrow_down', 'switcher__arrow')  
+        //-   button.switcher.switcher--next
+        //-     .switcher__container
+        //-       .switcher__image-wrap
+        //-         +image('./content/work-1.png', 'Фото проекта', 'switcher__image')
+        //-         +icon('portf_arrow_up', 'switcher__arrow')
 
   section.criticism
     .criticism__title.title-block

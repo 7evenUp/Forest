@@ -6,10 +6,7 @@
   }
 
   &__content {
-    display: flex;
-    align-items: center;
     position: relative;
-    margin-top: 60px;
 
     &::before {
       content: '';
@@ -21,140 +18,10 @@
       background: #ebefe2;
 
       @media (min-width: 1200px) {
-        flex-wrap: nowrap;
         background: linear-gradient(to right, #ebefe2 50%, #e1e4d7 0);
       }
     }
   }
-
-  &__col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1 1 50%;
-  }
-}
-
-.work-desc {
-  text-align: center;
-
-  &__name {
-    margin-bottom: 50px;
-  }
-
-  &__technologies {
-    margin-bottom: 60px;
-  }
-
-  &__btn {
-    text-align: center;
-  }
-}
-.technologies {
-  color: $dark-green;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.check-btn {
-  background-color: $dark-green;
-  transition: all 0.35s;
-  padding: 13px 18px;
-  border-radius: 25px;
-
-  &:hover {
-    cursor: pointer;
-    background-color: $dim-green;
-  }
-
-  &__icon {
-    fill: $white;
-    width: 20px;
-    height: 19px;
-    vertical-align: middle;
-    margin-right: 10px;
-  }
-
-  &__text {
-    font-weight: 500;
-    color: $white;
-    vertical-align: middle;
-  }
-}
-.works-slider {
-  text-align: center;
-
-  &__current-item {
-    padding: 110px 70px;
-  }
-
-  &__current-image {
-    width: 400px;
-  }
-
-  &__toggle-block {
-    display: flex;
-    align-items: center;
-  }
-
-  &__toggle-item {
-    flex: 1 1 50%;
-    position: relative;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  &__previous-item {
-    position: relative;
-
-    &::before {
-      content: '';
-      height: 100%;
-      width: 100%;
-      background-color: rgba(80, 80, 80, 0.5);
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 2;
-    }
-
-    &:hover .previous-btn {
-      transform: translateY(30px);
-    }
-  }
-  &__next-item {
-    &::before {
-      content: '';
-      height: 100%;
-      width: 100%;
-      background-color: rgba(80, 80, 80, 0.65);
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 2;
-    }
-
-    &:hover .next-btn {
-      transform: translateY(-30px);
-    }
-  }
-
-  &__toggle-image {
-    width: 100%;
-  }
-}
-.item-btn {
-  position: absolute;
-  left: calc(50% - 22px);
-  top: calc(50% - 14px);
-  z-index: 10;
-  transition: all 0.35s;
-}
-.portfolio-arrow {
-  width: 44px;
-  height: 28px;
-  fill: white;
 }
 .criticism {
   background: url(assets/images/bg/earth.png) no-repeat center bottom, #f4f5f0;

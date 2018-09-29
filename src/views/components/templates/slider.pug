@@ -1,0 +1,43 @@
+script(type="text/x-template")#slider-root
+  .slider
+    info(
+      :work="currentWork"
+    )
+    display(
+      :work="currentWork"
+    )
+    btns(
+      @slide="handleSlide"
+      :index="currentIndex"
+      :works="works"
+    )
+
+
+script(type="text/x-template")#slider-info
+  .slider__info-container
+    .slider__info
+      .slider__info-title
+        h3.subtitle {{ work.title }}
+      .slider__info-technologies
+        span.technologies {{ work.skills }}
+      .slider__info-button
+        a.visit-button(:href="work.link" target="_blank")
+          +icon('link', 'visit-button__icon')
+          span.visit-button__text Посмотреть сайт
+
+script(type="text/x-template")#slider-display
+  .slider__current-slide
+    img(:src="work.photo" class="slider__current-image" alt="Фото проекта")
+
+script(type="text/x-template")#slider-btns
+  .slider__switchers
+    button.switcher.switcher--prev(@click="slide('prev')")
+      .switcher__container
+        .switcher__image-wrap
+          img(:src="prevButtonWorks[index].photo" class="switcher__image" alt="Фото проекта")
+          +icon('portf_arrow_down', 'switcher__arrow')  
+    button.switcher.switcher--next(@click="slide('next')")
+      .switcher__container
+        .switcher__image-wrap
+          img(:src="nextButtonWorks[index].photo" class="switcher__image" alt="Фото проекта")
+          +icon('portf_arrow_up', 'switcher__arrow')
