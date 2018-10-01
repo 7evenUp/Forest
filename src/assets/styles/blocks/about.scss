@@ -1,6 +1,5 @@
 .about {
   display: flex;
-  flex-wrap: wrap;
   position: relative;
   min-height: 100vh;
 
@@ -50,6 +49,18 @@
     top: calc(100% + 10px);
     left: calc(50% - 45px);
   }
+
+  @include tablet {
+    font-size: 49px;
+  }
+
+  @include small-tablet {
+    font-size: 45px;
+  }
+
+  @include phone {
+    font-size: 35px;
+  }
 }
 .about__desc {
   margin: 0 75px;
@@ -91,6 +102,10 @@
     top: calc(100% + 15px);
     left: calc(50% - 45px);
   }
+
+  @include phone {
+    font-size: 21px;
+  }
 }
 .description-text {
   color: $text-color;
@@ -101,60 +116,6 @@
 }
 .about__skills-container {
   width: 555px;
-}
-.skills-row {
-
-  &__title {
-    font-weight: 500;
-    font-size: 28px;
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  &__list {
-    display: flex;
-    margin-bottom: 30px;
-  }
-}
-.skill {
-  position: relative;
-  z-index: 1;
-  margin-right: 37px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &__figure {
-    transform: rotate(-90deg);
-  }
-
-  &__under {
-    fill: transparent;
-    stroke: #dfdcd5;
-    stroke-width: 20px;
-  }
-
-  &__above {
-    fill: transparent;
-    stroke: #74a163;
-    stroke-width: 20px;
-    stroke-dasharray: 283;
-  }
-
-  &__name {
-    @include roboto();
-    text-align: center;
-    width: 62px;
-    font-weight: 500;
-    color: #4e8839;
-    font-size: 12px;
-    position: absolute;
-    left: 23%;
-    top: calc(50% - 10px);
-    line-height: 1;
-    z-index: 10;    
-  }
 }
 .contacts {
   height: 963px;

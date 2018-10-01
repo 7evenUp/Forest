@@ -16,13 +16,58 @@
     background: #faf8f0;
   }
 
+  @include desktop {
+    padding-right: 50px;
+  }
+
+  @include laptop {
+    padding-left: 10px;
+    padding-right: 30px;
+  }
+  @include tablet {
+    padding: 35px 0 0 0;
+  }
+  @include small-tablet {
+    padding: 35px 0 0 0;
+  }
+  @include phone {
+    padding: 35px 0 0 0;
+  }
+
   &__navigation {
-    flex-basis: 20%;
+
+    @include tablet {
+      position: absolute;
+      transform: translateX(-150%);
+    }
+    @include small-tablet {
+      position: absolute;
+      transform: translateX(-150%);
+    }
+    @include phone {
+      position: absolute;
+      transform: translateX(-150%);
+    }
   }
 
   &__content {
     margin-left: 120px;
-    flex-basis: 60%;
+
+    @include laptop {
+      margin-left: 35px;
+    }
+    @include tablet {
+      width: 90%;
+      margin: 0 auto;
+    }
+    @include small-tablet {
+      width: 90%;
+      margin: 0 auto;
+    }
+    @include phone {
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -57,12 +102,16 @@
         height: 42px;
         width: 3px;
         background-color: #6c9c5a;
-        left: calc(100% + 18px);
+        left: calc(100% + 6px);
         top: calc(50% - 21px);
       }
     }
     &:hover {
       color: #4e8839;
+    }
+
+    @include laptop {
+      font-size: 15px;
     }
   }
 }
@@ -70,16 +119,24 @@
 .article {
   margin-bottom: 140px;
   position: relative;
-  width: 680px;
+  width: auto;
+
+  @include laptop {
+    margin-bottom: 50px;
+  }
 
   & + &::before {
     content: '';
-    width: 680px;
+    width: 100%;
     height: 5px;
     background-color: #ecebe4;
     position: absolute;
     left: 0;
     top: -70px;
+
+    @include laptop {
+      top: -25px;
+    }
   }
 
   &__title {
@@ -100,7 +157,7 @@
     margin-bottom: 20px;
   }
   &__content {
-    width: 680px;
+    width: auto;
   }
   &__text {
     & + & {

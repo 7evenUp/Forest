@@ -1,0 +1,54 @@
+.skills-row {
+
+  &__title {
+    font-weight: 500;
+    font-size: 28px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    display: flex;
+    margin-bottom: 30px;
+  }
+}
+.skill {
+  position: relative;
+  z-index: 1;
+  margin-right: 37px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__figure {
+    transform: rotate(-90deg);
+  }
+
+  &__under {
+    fill: transparent;
+    stroke: #dfdcd5;
+    stroke-width: 20px;
+  }
+
+  &__above {
+    fill: transparent;
+    stroke: #74a163;
+    stroke-width: 20px;
+    stroke-dasharray: 283;
+  }
+
+  &__name {
+    @include roboto();
+    text-align: center;
+    width: 62px;
+    font-weight: 500;
+    color: #4e8839;
+    font-size: 12px;
+    position: absolute;
+    left: 23%;
+    top: calc(50% - 10px);
+    line-height: 1;
+    z-index: 10;    
+  }
+}

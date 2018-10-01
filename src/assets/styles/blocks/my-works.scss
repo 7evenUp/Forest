@@ -3,6 +3,7 @@
 
   &__title {
     margin-top: 55px;
+    margin-bottom: 55px;
   }
 
   &__content {
@@ -25,11 +26,20 @@
 }
 .criticism {
   background: url(assets/images/bg/earth.png) no-repeat center bottom, #f4f5f0;
-  background-size: 150%;
+  background-size: cover;
   padding: 60px 0 255px 0;
 
   @include tablet {
     background-size: cover;
+  }
+
+  @include small-tablet {
+    background-size: 370%;
+  }
+
+  @include phone {
+    background-size: 370%;
+    padding-bottom: 375px;
   }
 
   &__title {
@@ -41,8 +51,28 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     flex-wrap: wrap;
+
+    @include laptop {
+      width: 100%;
+    }
+
+    @include tablet {
+      width: 85%;
+    }
+    @include small-tablet {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+    }
+    @include phone {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;      
+    }
   }
 }
 .critic {
@@ -50,14 +80,74 @@
   flex: 1 1 50%;
   padding-top: 25px;
 
+  @include laptop {
+    flex: 0 1 46%;
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  @include tablet {
+    flex: 0 1 49%;
+    margin-left: 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }   
+  }
+
+  @include small-tablet {
+    width: 70%;
+
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }  
+  }
+
+  @include phone {
+    width: 85%;
+
+    margin-top: 14px;
+
+    &:first-child {
+      margin-top: 0;
+    }  
+  }
+
   &__talk {
     margin: 24px 0;
+
+    @include tablet {
+      margin: 20px 0;
+    }
+
+    @include small-tablet {
+      margin: 8px 0;
+    }
+
+    @include phone {
+      margin: 6px 0;
+    }
   }
   &__text {
     text-align: left;
     color: #5d5a55;
     font-style: italic;
     font-weight: 500;
+
+    @include tablet {
+      font-size: 14px;
+    }
+    @include small-tablet {
+      font-size: 14px;
+    }
+    @include phone {
+      font-size: 14px;
+    }
   }
 
   &__name {
@@ -69,21 +159,28 @@
   &__post {
     color: $text-color;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 500; 
   }
 }
 
 .contact-form {
   border-radius: 5px;
   background-color: rgba(200, 200, 200, 0.65);
-  min-height: 460px;
   width: 380px;
   margin: 70px auto;
   padding-top: 35px;
   text-align: center;
 
+  @include phone {
+    width: 300px;
+  }
+
   &__title {
     margin-bottom: 60px;
+
+    @include phone {
+      margin-bottom: 35px;
+    }
   }
   &__textarea {
     resize: none;
@@ -94,6 +191,11 @@
     padding: 15px 18px;
     width: 90%;
     border-radius: 25px;
+
+    @include phone {
+      font-size: 14px;
+      padding: 15px 15px;
+    }
   }
   
   &__menu {

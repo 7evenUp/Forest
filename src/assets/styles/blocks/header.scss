@@ -1,5 +1,7 @@
 .page-header {
   position: relative;
+  min-height: 650px;
+  height: 100vh;
   align-items: center;
   background: linear-gradient(to bottom, rgba(0, 0 ,0 , 0.30) 30%, rgba(0, 0 ,0 , 0.0) 80%),
               url('assets/images/bg/water.jpg') no-repeat center;
@@ -13,14 +15,37 @@
 
   &--blog {
     left: calc(50% - 150px);
-    top: calc(50% - 84px);
+    top: calc(50% - 5px);
   }
 
   &--portfolio {
     width: 1000px;
     height: 300px;
     left: calc(50% - 500px);
-    top: calc(50% - 240px);
+    top: calc(50% - 185px);
+
+    @include laptop {
+      width: 750px;
+      left: calc(50% - 375px);
+    }
+
+    @include tablet {
+      width: 590px;
+      left: calc(50% - 295px);
+      top: calc(50% - 80px);
+    }
+
+    @include small-tablet {
+      width: 450px;
+      left: calc(50% - 225px);
+      top: calc(50% - 75px);
+    }
+
+    @include phone {
+      width: 300px;
+      top: 50%;
+      left: calc(50% - 150px);
+    }
   }
 }
 .header {
@@ -40,6 +65,7 @@
 }
 .hero-container {
   margin-top: 100px;
+  position: relative;
 }
 .section-title {
   display: none;

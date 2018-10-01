@@ -1,0 +1,47 @@
+.title-block {
+  position: relative;
+}
+.title-icon {
+  fill: #e2ebd0;
+  height: 170px;
+  left: calc(50% - 250px);
+  position: absolute;
+  top: -100%;
+  width: 500px;
+
+  @include tablet {
+    fill: #e2ebd0;
+    height: 140px;
+    left: calc(50% - 200px);
+    position: absolute;
+    top: -100%;
+    width: 400px;
+  }
+  @include small-tablet {
+    fill: #e2ebd0;
+    height: 140px;
+    left: calc(50% - 190px);
+    position: absolute;
+    top: -120%;
+    width: 380px;
+  }
+  @include phone {
+    fill: #e2ebd0;
+    height: 140px;
+    left: calc(50% - 170px);
+    position: absolute;
+    top: -165%;
+    width: 340px;
+  }
+}
+.title-icon--doubled {
+  top: -32%;
+
+  @include phone {
+    top: -45%;
+  }
+}
+.title-icon--lighter {
+  fill: #e2ebd0;
+  transform: scale(0.75);
+}

@@ -8,38 +8,12 @@ block scripts
 
 block content
   +header('portfolio')
-  section.works
+  section.works.js-scroll-target
     .works__title.title-block
       +icon('works_header', 'title-icon')
       h2.title Мои работы
     .works__content
       #slider-component
-
-        //- .slider__info-container
-        //-   .slider__info
-        //-     .slider__info-title
-        //-       h3.subtitle Сайт школы онлайн образования
-        //-     .slider__info-technologies
-        //-       span.technologies HTML, CSS, JavaScript
-        //-     .slider__info-button
-        //-       a.visit-button
-        //-         +icon('link', 'visit-button__icon')
-        //-         span.visit-button__text Посмотреть сайт
-
-        //- .slider__current-slide
-        //-   +image('./content/work-1.png', 'Фото проекта', 'slider__current-image')
-
-        //- .slider__switchers
-        //-   button.switcher.switcher--prev
-        //-     .switcher__container
-        //-       .switcher__image-wrap
-        //-         +image('./content/work-1.png', 'Фото проекта', 'switcher__image')
-        //-         +icon('portf_arrow_down', 'switcher__arrow')  
-        //-   button.switcher.switcher--next
-        //-     .switcher__container
-        //-       .switcher__image-wrap
-        //-         +image('./content/work-1.png', 'Фото проекта', 'switcher__image')
-        //-         +icon('portf_arrow_up', 'switcher__arrow')
 
   section.criticism
     .criticism__title.title-block

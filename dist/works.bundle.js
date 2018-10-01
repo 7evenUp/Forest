@@ -154,6 +154,18 @@ eval("\n\n(function () {\n  'use strict';\n\n  var menuBtnContainer = document.q
 
 /***/ }),
 
+/***/ "./src/assets/scripts/modules/scroll-button.js":
+/*!*****************************************************!*\
+  !*** ./src/assets/scripts/modules/scroll-button.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n(function () {\n  'use strict';\n})();\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXNzZXRzL3NjcmlwdHMvbW9kdWxlcy9zY3JvbGwtYnV0dG9uLmpzP2FlNDgiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxDQUFDLFlBQVk7QUFDWDtBQUVELENBSEQiLCJmaWxlIjoiLi9zcmMvYXNzZXRzL3NjcmlwdHMvbW9kdWxlcy9zY3JvbGwtYnV0dG9uLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiKGZ1bmN0aW9uICgpIHtcclxuICAndXNlIHN0cmljdCc7XHJcbiAgXHJcbn0pKCk7Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/assets/scripts/modules/scroll-button.js\n");
+
+/***/ }),
+
 /***/ "./src/assets/scripts/modules/slider.js":
 /*!**********************************************!*\
   !*** ./src/assets/scripts/modules/slider.js ***!
@@ -174,7 +186,7 @@ eval("\n\nvar _vue = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vu
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./modules/menu */ \"./src/assets/scripts/modules/menu.js\");\n\n__webpack_require__(/*! ./modules/slider */ \"./src/assets/scripts/modules/slider.js\");\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXNzZXRzL3NjcmlwdHMvd29ya3MuanM/OGMzMSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBOztBQUNBIiwiZmlsZSI6Ii4vc3JjL2Fzc2V0cy9zY3JpcHRzL3dvcmtzLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFwiLi9tb2R1bGVzL21lbnVcIjtcclxuaW1wb3J0IFwiLi9tb2R1bGVzL3NsaWRlclwiIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/assets/scripts/works.js\n");
+eval("\n\n__webpack_require__(/*! ./modules/menu */ \"./src/assets/scripts/modules/menu.js\");\n\n__webpack_require__(/*! ./modules/slider */ \"./src/assets/scripts/modules/slider.js\");\n\n__webpack_require__(/*! ./modules/scroll-button */ \"./src/assets/scripts/modules/scroll-button.js\");\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXNzZXRzL3NjcmlwdHMvd29ya3MuanM/OGMzMSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBOztBQUNBOztBQUNBIiwiZmlsZSI6Ii4vc3JjL2Fzc2V0cy9zY3JpcHRzL3dvcmtzLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFwiLi9tb2R1bGVzL21lbnVcIjtcclxuaW1wb3J0IFwiLi9tb2R1bGVzL3NsaWRlclwiO1xyXG5pbXBvcnQgXCIuL21vZHVsZXMvc2Nyb2xsLWJ1dHRvblwiIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/assets/scripts/works.js\n");
 
 /***/ }),
 

@@ -1,18 +1,49 @@
 .slider {
   display: grid;
-  grid-template: 'info display' 70% 'info buttons' 30% / 1fr 1fr;
+  grid-template:
+    'info display' 70%
+    'info buttons' 30%
+    / 1fr 1fr;
   height: 100vh;
   min-height: 600px;
 
   @include tablet {
-    grid-template: 'display' 500px 'info' 200px 'button' 200px / 1fr;
+    height: auto;
+    grid-template:
+      'display' 530px
+      'info' 270px
+      'button' 230px
+      / 1fr;
   }
+
+  @include small-tablet {
+    height: auto;
+    grid-template:
+      'display' 400px
+      'info' 245px
+      'button' 150px
+      / 1fr;
+  }
+
+  @include phone {
+    height: auto;
+    grid-template:
+      'display' 260px
+      'info' 230px
+      'button' 110px
+      / 1fr;
+  }
+
 
   &__info-container {
     grid-area: info;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 768px) {
+      background-color: white;
+    }
   }
 
   &__info {
@@ -21,10 +52,54 @@
     &-title {
       margin-bottom: 50px;
       max-width: 320px;
+
+      & .subtitle {
+        @include tablet {
+          font-size: 30px;
+        }
+
+        @include small-tablet {
+          font-size: 25px;
+        }
+
+        @include phone {
+          font-size: 21px;
+        }
+      }
+
+      & .subtitle::before {
+        @include phone {
+          top: calc(100% + 10px);
+        }
+      }
+
+      @include tablet {
+        max-width: none;  
+        margin-bottom: 35px;
+      }
+
+      @include small-tablet {
+        max-width: 400px;
+        margin-bottom: 30px;
+      }
+
+      @include phone {
+        margin-bottom: 25px;
+      }
     }
 
     &-technologies {
       margin-bottom: 60px;
+
+      @include tablet {
+        margin-bottom: 40px;
+      }
+      @include small-tablet {
+        margin-bottom: 30px;
+      }
+      @include phone {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -56,6 +131,13 @@
   color: $dark-green;
   font-weight: 500;
   text-transform: uppercase;
+
+  @include small-tablet {
+    font-size: 15px;
+  }
+  @include phone {
+    font-size: 14px;
+  }
 }
 .visit-button {
   background-color: $dark-green;
@@ -93,10 +175,18 @@
 
   &--prev:hover &__arrow {
     transform: translateY(30px);
+
+    @include phone {
+      transform: none;
+    }
   }
 
   &--next:hover &__arrow {
     transform: translateY(-30px);
+
+    @include phone {
+      transform: none;
+    }
   }
 
   &--prev::before {
@@ -157,5 +247,10 @@
     fill: $white;
     z-index: 20;
     transition: all 0.5s;
+
+    @include phone {
+      height: 18px;
+      top: calc(50% - 9px);
+    }
   }
 }

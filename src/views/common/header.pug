@@ -1,11 +1,10 @@
 mixin header(mod)
-  section.page-header.section
-    +icon(`${mod}_header`, `background-title background-title--${mod}`)
+  section.page-header
     header.header
       .header__socials
         +socials('header')
     .hero-container
-      span.section-title Portfolio
+      +icon(`${mod}_header`, `background-title background-title--${mod}`)
       +hero(mod)
-    button.down-btn
+    button.down-btn.js-down-btn
       +icon('arrow_down', 'down-arrow')
