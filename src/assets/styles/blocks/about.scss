@@ -103,6 +103,14 @@
     left: calc(50% - 45px);
   }
 
+  @include tablet {
+    font-size: 30px;
+  }
+
+  @include small-tablet {
+    font-size: 26px;
+  }
+
   @include phone {
     font-size: 21px;
   }

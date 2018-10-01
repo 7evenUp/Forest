@@ -12,13 +12,22 @@ block content
     aside.blog__navigation
       nav.articles
         ul.articles__list
-          each item in [['Самое важное в SASS', true], ['Приёмы в вёрстке, без которых не обходится ни один сайт', false], ['Самый необходимый набор Gulp плагинов', false], ['Почему я выбрал Pug', false]]
+          each item in [['Мои любимые цитаты', true],['Самое важное в SASS', false], ['Приёмы в вёрстке, без которых не обходится ни один сайт', false], ['Самый необходимый набор Gulp плагинов', false], ['Почему я выбрал Pug', false]]
             li.articles__item
               if item[1]
                 button.articles__link.articles__link--active #{item[0]}
               else
                 button.articles__link #{item[0]}
     .blog__content
+      article.article
+        .article__title
+          h3.subtitle Мои любимые цитаты
+        .article__date
+          time.publication-date(datetime='2018-10-2') 2 октября 2018
+        .article__content
+          p.article__text 
+            != 'У всех есть свои любимые фразы и цитаты. Для кого-то они являются ориентиром в жизни, кому-то помогают держаться своей цели. Меня же они просто вдохновляют. Вот их список:<blockquote class="article__blockquote"><p>Хороший программист - это тот, кто смотрит в обе стороны, переходя дорогу с односторонним движением.</p><cite class="article__blockquote-author">Даг Линдер</cite></blockquote><blockquote class="article__blockquote"><p>Это единственная работа, где я могу быть одновременно инженером и художником. В ней есть что-то невероятное, технически строгое - что я очень люблю, поскольку оно требует крайне точного мышления. С другой стороны, здесь также присутствует простор для творчества, где единственным настоящим ограничением являются границы воображения.</p><cite class="article__blockquote-author">Энди Херцфельд</cite></blockquote><blockquote class="article__blockquote"><p>Функции должны делать одно вещь и делать ее хорошо и делать только ее.</p><cite class="article__blockquote-author">Роберт С. Мартин</cite></blockquote><blockquote class="article__blockquote"><p>Упорство и сила духа творили чудеса во все времена.</p><cite class="article__blockquote-author">Джордж Вашингтон</cite></blockquote><blockquote class="article__blockquote"><p>Я твердо убеждён, что само образование - это единственно возможное образование.</p><cite class="article__blockquote-author">Айзек Азимов</cite></blockquote><blockquote class="article__blockquote"><p>Существуют лишь два вида языков программирования: те, которые постоянно ругают, и те, которыми никто не пользуется.</p><cite class="article__blockquote-author">Бьерн Страуструп</cite></blockquote><blockquote class="article__blockquote"><p>Болтовня ничего не стоит. Покажите мне код.</p><cite class="article__blockquote-author">Линус Торвальдс</cite></blockquote><blockquote class="article__blockquote"><p>У каждого программиста найдётся своя история о том, как он написал свою первую программу.</p><cite class="article__blockquote-author">Эрик Мэтиз</cite></blockquote>'
+
       article.article
         .article__title
           h3.subtitle Самое важное в SASS
@@ -36,4 +45,20 @@ block content
         .article__content
           p.article__text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
           p.article__text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+
+      article.article
+        .article__title
+          h3.subtitle Самый необходимый набор Gulp плагинов
+        .article__date
+          time.publication-date(datetime='2018-10-01') 1 октября 2018
+        .article__content
+          p.article__text 
+            != '<span class="article__text-accent">autoprefixer</span>" — один из самых полезных плагинов, который автоматически расставляет префиксы к CSS свойствам, исходя из статистики caniuse.'
+          p.article__text 
+            != '<span class="article__text-accent">gulp-browser-sync</span> — вероятно, самый нужный инструмент, с точки зрения повышения продуктивности веб-разработчиков. BrowserSync создает подключение, после чего производит автообновление страницы во всех браузерах на всех устройствах при изменениями не только клиентских или даже серверных файлов. А плюс ко всему синхронизирует позицию скроллинга и заполненные данные в формах.'
+          p.article__text 
+            != '<span class="article__text-accent">gulp-autopolyfiller</span> — мега крутой плагин, который похож на Autoprefixer и подбирает все необходимые полифилы для JavaScript, чтобы вы могли использовать последние стандарты ECMAScript уже сегодня. Еще рекомендую gulp-babel, который конвертирует ES6/ES7 в ES5.'
+          p.article__text 
+            != '<span class="article__text-accent">gulp-jsonlint</span> — валидатор JSON файлов.'
+
   +footer('blog')
