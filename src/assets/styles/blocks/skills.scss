@@ -1,3 +1,24 @@
+.skills {
+  @include desktop {
+    text-align: center;
+  }
+
+  @include laptop {
+    text-align: center;
+  }
+
+  @include tablet {
+    text-align: center;
+  }
+
+  @include small-tablet {
+    text-align: center;
+  }
+
+  @include phone {
+    text-align: center;
+  }
+}
 .skills-row {
 
   &__title {
@@ -10,12 +31,62 @@
   &__list {
     display: flex;
     margin-bottom: 30px;
+
+    @include desktop {
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    @include laptop {
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    @include tablet {
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    @include small-tablet {
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    @include phone {
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
   }
 }
 .skill {
   position: relative;
   z-index: 1;
   margin-right: 37px;
+
+  @include desktop {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  @include laptop {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  @include tablet {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  @include small-tablet {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  @include phone {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 
   &:last-child {
     margin-right: 0;
