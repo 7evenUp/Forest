@@ -257,4 +257,8 @@
   background: transparent;
   position: relative;
   left: calc(50% - 13px);
+
+  @include tablet {
+    top: -30px;
+  }
 }

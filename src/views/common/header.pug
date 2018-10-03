@@ -1,10 +1,14 @@
 mixin header(mod)
-  section.page-header
+  section(class=`page-header page-header--${mod}`)
     header.header
       .header__socials
         +socials('header')
     .hero-container
-      +icon(`${mod}_header`, `background-title background-title--${mod}`)
-      +hero(mod)
+      if mod == 'about' || mod == 'works'
+        +icon('portfolio_header', 'background-title background-title--portfolio')
+        +hero(mod)
+      else
+        +icon(`${mod}_header`, `background-title background-title--${mod}`)
+        +hero(mod)
     button.down-btn.js-down-btn
       +icon('arrow_down', 'down-arrow')

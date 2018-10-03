@@ -1,12 +1,61 @@
 .page-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   position: relative;
   min-height: 650px;
   height: 100vh;
-  align-items: center;
   background: linear-gradient(to bottom, rgba(0, 0 ,0 , 0.30) 30%, rgba(0, 0 ,0 , 0.0) 80%),
               url('assets/images/bg/water.jpg') no-repeat center;
   background-size: cover;
-  clip-path: polygon(0 0, 0 83%, 50% 100%, 100% 83%, 100% 0);
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+  }
+
+  &::before {
+    left: 0;
+    border-bottom: 17vh solid white;
+    border-right: calc(100vw / 2) solid transparent;
+  }
+
+  &::after {
+    right: 0;
+    border-bottom: 17vh solid white;
+    border-left: calc(100vw / 2) solid transparent;
+  }
+
+  &--about {
+    &::before {
+      left: 0;
+      border-bottom: 17vh solid #ebefe2;
+      border-right: calc(100vw / 2) solid transparent;
+    }
+    &::after {
+      right: 0;
+      border-bottom: 17vh solid #ebefe2;
+      border-left: calc(100vw / 2) solid transparent;
+    }
+    @media (min-width: 1200px) {
+      &::after {
+        right: 0;
+        border-bottom: 17vh solid #f4f5f0;
+        border-left: calc(100vw / 2) solid transparent;
+      }
+    }
+  }
+
+  @supports (clip-path: polygon(0 0, 0 83%, 50% 100%, 100% 83%, 100% 0)) {
+    clip-path: polygon(0 0, 0 83%, 50% 100%, 100% 83%, 100% 0);
+    
+    &::before, &::after {
+      content: none;
+    }
+  }
 }
 .background-title {
   fill: rgba(255,255,255, 0.15);
@@ -64,7 +113,8 @@
   }
 }
 .hero-container {
-  margin-top: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
   position: relative;
 }
 .section-title {
