@@ -2,19 +2,23 @@
   background: linear-gradient(to bottom, rgba(0, 0 ,0 , 0.30) 35%, rgba(0, 0 ,0 , 0.0) 50%, rgba(0, 0 ,0 , 0.30) 65%),
               url('assets/images/bg/water.jpg') no-repeat center top;
   background-size: cover;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .welcome-header {
   display: flex;
   justify-content: flex-end;
   padding-top: 20px;
   padding-right: 20px;
-}
-.footer-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+
+  @include phone {
+    padding: 0;
+    padding-top: 20px;
+    justify-content: center;
+  }
 }
 .auth-button {
   min-width: 180px;
@@ -44,18 +48,70 @@
   justify-content: center;
   align-items: center;
   margin-top: 55px;
+
+  @include phone {
+    margin: 0;
+  }
 }
 .card {
   position: relative;
   width: 380px;
   perspective: 1000px;
+  min-height: 440px;
+
+  @include phone {
+    width: 300px;
+  }
+}
+.footer-container {
+  width: 100%;
 }
 .copyright {
   padding: 40px 0;
   width: 100%;
   margin: 0 auto;
-}
-.copyright__text {
-  color: $white;
-  text-align: center;
+
+  @include phone {
+    padding: 5px 0;
+  }
+
+  &__text {
+    color: $white;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300;
+
+    @include small-tablet {
+      font-size: 15px;
+    }
+    
+    @include phone {
+      font-size: 14px;
+    }
+  }
+
+  &__creator {
+    @include phone {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__barrier {
+    @include phone {
+      display: none;
+    }
+  }
+
+  &__info {
+    @include phone {
+      display: block;
+      margin: 0 auto;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
 }

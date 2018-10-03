@@ -22,7 +22,7 @@ block content
               h3.subtitle Кто я
             .user-desc__text
               p.description-text 
-                != 'Я веб разработчик из Санкт-Петербурга. Мне 17 лет. <br>Я занимаюсь разработкой современных сайтов <br>и приложений. Мне нравится делать интересные <br>и современные проекты.'
+                != 'Я веб разработчик из Санкт-Петербурга. Мне 17 лет. <br>Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.'
               p.description-text 
                 != 'Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,<br>как тут всё классно и красиво!'
 
@@ -36,7 +36,6 @@ block content
         #skills-component
 
   section.contacts
-    .google-map#map
     .contacts__container
       .user-data
         .user-data__title
@@ -59,4 +58,5 @@ block content
               .contacts-cell
                 +icon('map_marker', 'contacts-cell__icon')
                 span.contacts-cell__title Санкт-Петербург, пр. Энгельса, д.129, к.4
+    .google-map#map
   +footer('about')

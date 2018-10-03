@@ -20,7 +20,7 @@
   }
 
   &__col {
-    padding: 20px 0 25px 0;
+    padding: 25px 0 25px 0;
     display: flex;
     flex-direction:column;
     justify-content: space-between;
@@ -95,14 +95,24 @@
 .about__desc {
   margin: 0 75px;
   width: 445px;
+
+  @include small-tablet {
+    width: 80%;
+    margin: 0;
+  }
+
+  @include phone {
+    width: 100%;
+    margin: 0;
+  }
 }
 .user-desc {
   width: 100%;
   text-align: center;
 
   &__image {
-    width: 100%;
-    height: 390px;  
+    max-width: 100%;
+    max-height: 390px;
   }
 
   &__info {
@@ -112,6 +122,13 @@
   &__title {
     text-align: center;
     margin: 40px 0 50px 0;
+  }
+
+  &__text {
+    @include phone {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 .subtitle {
@@ -148,6 +165,13 @@
 .description-text {
   color: $text-color;
   max-width: 530px;
+
+  @include small-tablet {
+    font-size: 15px;
+  }
+  @include phone {
+    font-size: 14px;
+  }
 
   & + & {
     margin-top: 20px;
@@ -193,16 +217,28 @@
   height: 963px;
   min-height: 650px;
   position: relative;
+
+  @include phone {
+    height: 160vh;
+  }
 }
 #map {
   height: 100%;
   background: url('assets/images/content/map.png') no-repeat center;
   background-size: cover;
+
+  @include phone {
+    height: 60%;
+  }
 }
 .contacts__container {
   position: absolute;
   left: calc(50% - 190px);
   top: calc(50% - 250px);
+
+  @include phone {
+    position: static;
+  }
 }
 .user-data {
   width: 380px;
@@ -210,6 +246,13 @@
   background: rgba(255, 255, 255, 0.85);
   border-radius: 5px;
   padding: 20px 40px;
+
+  @include phone {
+    width: 100%;
+    border-radius: none;
+    padding: 15px 30px;
+    text-align: center;
+  }
 
   &__title {
     margin-bottom: 50px;
@@ -238,9 +281,17 @@
     font-weight: 500;
     line-height: 1.1;
 
+    @include phone {
+      text-align: left;
+    }
+
     &--link {
       text-decoration: none;
       color: $text-color;
+
+      @include phone {
+        text-decoration: underline;
+      }
 
       &:hover {
         text-decoration: underline;

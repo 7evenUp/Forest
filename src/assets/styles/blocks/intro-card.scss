@@ -79,6 +79,11 @@
     &:hover::after {
       transform: scaleX(1);
     }
+
+    @include phone {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
   }
 }
 

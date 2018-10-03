@@ -3,7 +3,7 @@ extends ../auth.layout.pug
 block content
   - var links = ['my-works.html', 'about.html', 'blog.html'];
 
-  section.welcome-section.section
+  section.welcome-section
     header.welcome-header
       button.auth-button(type="button") Авторизоваться
 
@@ -54,4 +54,5 @@ block content
 
     footer.footer-container
       .copyright
-        p.copyright__text &copy; Шелудешев Артём | создано с любовью в Loftschool | 2018
+        p.copyright__text
+          != '<span class="copyright__creator">&copy; Шелудешев Артём</span> <span class="copyright__barrier">|</span> <span class="copyright__info">создано с любовью в Loftschool | 2018</span>'
