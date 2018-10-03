@@ -235,9 +235,11 @@
   position: absolute;
   left: calc(50% - 190px);
   top: calc(50% - 250px);
+  z-index: 1;
 
   @include phone {
     position: static;
+    z-index: 0;
   }
 }
 .user-data {
