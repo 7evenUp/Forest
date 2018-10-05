@@ -39,14 +39,16 @@ block content
           p.critic__post — преподаватель
 
     .contact-form
-      .contact-form__title
-        h3.subtitle Связаться со мной
-      input.contact-form__input(type="text", placeholder="Имя", aria-label="Введите ваше имя")
-      input.contact-form__input(type="email", placeholder="Email", aria-label="Введите ваш email")
-      textarea.contact-form__textarea(type="email", placeholder="Ваше сообщение", aria-label="Введите ваше сообщение")
-      .contact-form__menu
-        button.contact-form__btn.contact-form__btn--submit(type="sumbit") Отправить
-        button.contact-form__btn.contact-form__btn--reset(type="reset") Очистить
+      .contact-form__background
+      .contact-form__content
+        .contact-form__title
+          h3.subtitle Связаться со мной
+        input.contact-form__input(type="text", placeholder="Имя", aria-label="Введите ваше имя")
+        input.contact-form__input(type="email", placeholder="Email", aria-label="Введите ваш email")
+        textarea.contact-form__textarea(type="email", placeholder="Ваше сообщение", aria-label="Введите ваше сообщение")
+        .contact-form__menu
+          button.contact-form__btn.contact-form__btn--submit(type="sumbit") Отправить
+          button.contact-form__btn.contact-form__btn--reset(type="reset") Очистить
     button.criticism__down-btn.up-btn
       +icon('arrow_down', 'down-arrow down-arrow--rotated')
       

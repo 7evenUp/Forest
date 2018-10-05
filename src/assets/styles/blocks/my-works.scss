@@ -25,20 +25,11 @@
   }
 }
 .criticism {
-  background: url(assets/images/bg/earth.png) no-repeat center bottom, #f4f5f0;
+  background: url(assets/images/bg/earth.png) no-repeat, #f4f5f0;
   background-size: cover;
   padding: 60px 0 255px 0;
 
-  @include tablet {
-    background-size: cover;
-  }
-
-  @include small-tablet {
-    background-size: 370%;
-  }
-
   @include phone {
-    background-size: 370%;
     padding-bottom: 375px;
   }
 
@@ -160,94 +151,6 @@
     color: $text-color;
     font-style: italic;
     font-weight: 500; 
-  }
-}
-
-.contact-form {
-  border-radius: 5px;
-  background-color: rgba(200, 200, 200, 0.65);
-  width: 380px;
-  margin: 70px auto;
-  padding-top: 35px;
-  text-align: center;
-
-  @include phone {
-    width: 300px;
-  }
-
-  &__title {
-    margin-bottom: 60px;
-
-    @include phone {
-      margin-bottom: 35px;
-    }
-  }
-  &__textarea {
-    resize: none;
-    height: 140px;
-  }
-  &__input, &__textarea {
-    margin-bottom: 20px;
-    padding: 15px 18px;
-    width: 90%;
-    border-radius: 25px;
-
-    @include phone {
-      font-size: 14px;
-      padding: 15px 15px;
-    }
-  }
-  
-  &__menu {
-    display: flex;
-    align-items: center;
-  }
-
-  &__btn {
-    flex: 1 1 50%;
-    color: $white;
-    font-weight: 500;
-    background-color: $dim-green;
-    padding: 11px 30px;
-    transition: all 0.25s;
-    width: 100%;
-    position: relative;
-
-    &:focus-within {
-      background-color: $dark-green;
-    }
-
-    & + & {
-      border-left: 2px solid #a0b99e;
-    }
-
-    &:hover {
-      background-color: $dark-green;
-      cursor: pointer;
-    }
-
-    &::before {
-      content: '';
-      transform: scaleX(0);
-      transition: all 0.25s;
-      position: absolute;
-      width: 26px;
-      height: 2px;
-      background-color: $white;
-      top: calc(100% - 8px);
-      left: calc(50% - 13px);
-    }
-
-    &:hover::before, &:focus-within::before {
-      transform: scaleX(1);
-    }
-
-    &--submit {
-      border-bottom-left-radius: 5px;
-    }
-    &--reset {
-      border-bottom-right-radius: 5px;
-    }
   }
 }
 
