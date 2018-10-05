@@ -1,12 +1,21 @@
 .welcome-section {
-  background: linear-gradient(to bottom, rgba(0, 0 ,0 , 0.30) 35%, rgba(0, 0 ,0 , 0.0) 50%, rgba(0, 0 ,0 , 0.30) 65%),
-              url('assets/images/bg/water.jpg') no-repeat center top;
+  background: linear-gradient(to bottom, rgba(0, 0 ,0 , 0.30) 35%, rgba(0, 0 ,0 , 0.0) 50%, rgba(0, 0 ,0 , 0.30) 65%);
+              // url('assets/images/bg/water.jpg') no-repeat center top;
   background-size: cover;
   height: 100vh;
   min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  top: 0;
+}
+#webgl-container {
+  position: absolute;
+  height: 100vh;
+  min-height: 600px;
+  max-width: 100%;
+  overflow: hidden;
 }
 .welcome-header {
   display: flex;

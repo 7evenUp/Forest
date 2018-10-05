@@ -4,6 +4,7 @@
   position: relative;
   min-height: 100vh;
   padding: 75px 110px 0 40px;
+  overflow-x: hidden;
 
   &::before {
     content: '';
@@ -35,23 +36,33 @@
   }
 
   &__navigation {
+    transition: 0.5s;
 
-    @include tablet {
-      position: absolute;
-      transform: translateX(-150%);
+    @media (max-width: 768px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-color: #6c9c5a;
+      height: 100vh;
+      box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
     }
-    @include small-tablet {
-      position: absolute;
-      transform: translateX(-150%);
-    }
-    @include phone {
-      position: absolute;
-      transform: translateX(-150%);
+
+    &--active {
+      transform: translateX(0);
     }
   }
 
   &__content {
     margin-left: 120px;
+    transition: 0.5s;
+    position: relative;
+    transform: translateX(0);
+    z-index: -1;
+
+    &--active {
+      transform: translateX(45%);
+    }
 
     @include laptop {
       margin-left: 30px;
@@ -70,10 +81,39 @@
     }
   }
 }
-
 .articles {
+
+  @media (max-width: 768px) {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-swipe-btn {
+    display: none;
+
+    @media (max-width: 768px) {
+      background: #6c9c5a;
+      border-radius: 50%;
+      cursor: pointer;
+      display: block;
+      height: 50px;
+      left: calc(100% - 25px);
+      position: absolute;
+      top: calc(50% - 25px);
+      width: 36px;
+      box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+      z-index: -1;
+    }
+  }
+
   &__list {
     padding-top: 20px;
+
+    @media (max-width: 768px) {
+      padding-right: 20px;
+    }
   }
   &__item {
     text-align: right;
@@ -81,20 +121,22 @@
     width: 240px;
   }
   &__link {
-    text-decoration: none;
     color: $text-color;    
     background-color: transparent;
     text-align: right;
 
-    &:focus-within {
-      color: #6c9c5a;
-      border: 1px solid #6c9c5a;
+    @media (max-width: 768px) {
+      color: rgba(255, 255, 255, 0.7);
     }
 
     &--active {
       font-weight: 700;
       color: #4e8839;
       position: relative;
+
+      @media (max-width: 768px) {
+        color: white;
+      }
 
       &::after {
         content: '';
@@ -104,10 +146,17 @@
         background-color: #6c9c5a;
         left: calc(100% + 6px);
         top: calc(50% - 21px);
+
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
     }
     &:hover {
       color: #4e8839;
+      @media (max-width: 768px) {
+        color: white;
+      }
     }
 
     @include laptop {

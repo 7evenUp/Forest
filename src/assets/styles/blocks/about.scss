@@ -49,6 +49,7 @@
 
     &--skills {
       background-color: #f4f5f0;
+      justify-content: flex-start;
 
       @include small-tablet {
         padding-left: 10px;
@@ -181,6 +182,7 @@
 
   &-container {
     width: 555px;
+    margin: auto 0;
 
     @include desktop {
       width: 55%;

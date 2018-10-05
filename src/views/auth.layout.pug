@@ -3,7 +3,7 @@ include ./common/socials
 include ./common/header
 include ./common/hero-desc
 include ./common/footer
-
+  
 doctype html
 html(lang="ru")
   head
@@ -15,5 +15,6 @@ html(lang="ru")
   body
     
     block content
-
+    
+    include ./common/webGL-scripts
     script(src="auth.bundle.js")
