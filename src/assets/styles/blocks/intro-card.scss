@@ -159,9 +159,12 @@
   margin-left: 44px;
   max-height: 45px;
 
+  &:invalid.text-input__icon {
+    fill: #F44336;
+  }
+
   &:focus {
     color: $grey;
-    outline: none;
   }
 }
 .text-input__icon {

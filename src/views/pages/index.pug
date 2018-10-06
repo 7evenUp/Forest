@@ -23,18 +23,18 @@ block content
         .card-auth
           h2.card-auth__heading Авторизуйтесь
           .card-auth__form
-            form.auth-form(method="post" action="")
+            form.auth-form#authorization-form(method="post", enctype="multipart/form-data", action="#")
               fieldset.auth-form__fieldset
                 .auth-form__text--overlay
                   label.auth-form__text-label(for="auth-form__login")
                     +icon('login', 'text-input__icon')
-                  input.auth-form__text-input#auth-form__login(type="text", name="login", placeholder="Логин")
+                  input.auth-form__text-input#auth-form__login(type="text", name="login", placeholder="Логин", required, minlength="8", maxlength="25")
                 .auth-form__text--overlay
                   label.auth-form__text-label(for="auth-form__password")
                     +icon('password', 'text-input__icon')
-                  input.auth-form__text-input#auth-form__password(type="password", name="password", placeholder="Пароль")
+                  input.auth-form__text-input#auth-form__password(type="password", name="password", placeholder="Пароль", required, minlength="8", maxlength="25")
               fieldset.auth-form__fieldset
-                input.auth-form__checkbox-input#auth-form__checkbox(type="checkbox")
+                input.auth-form__checkbox-input#auth-form__checkbox(type="checkbox", required)
                 label.auth-form__checkbox-label(for="auth-form__checkbox") Я человек
                   +icon('check', 'checkbox-label__icon')
               fieldset.auth-form__fieldset
@@ -51,7 +51,7 @@ block content
               li.auth-panel__item
                 button.auth-panel__button(type="button") На главную
               li.auth-panel__item
-                button.auth-panel__button(type="submit") Войти
+                button.auth-panel__button(type="submit", form="authorization-form") Войти
 
     footer.footer-container
       .copyright

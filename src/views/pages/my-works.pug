@@ -16,6 +16,14 @@ block content
       #slider-component
 
   section.criticism
+    .parallax
+      .parallax__layer
+        +image('./content/list1.png', 'Изображение листика', 'parallax__image parallax__image--1')
+      .parallax__layer
+        +image('./content/list2.png', 'Изображение листика', 'parallax__image parallax__image--2')
+      .parallax__layer
+        +image('./content/list3.png', 'Изображение листика', 'parallax__image parallax__image--3')
+      .parallax__content
     .criticism__title.title-block
       +icon('about_header', 'title-icon title-icon--doubled')
       h2.title
@@ -40,16 +48,19 @@ block content
 
     .contact-form
       .contact-form__background
-      .contact-form__content
+      form.contact-form__content(method="post", enctype="multipart/form-data", action="#")
         .contact-form__title
           h3.subtitle Связаться со мной
-        input.contact-form__input(type="text", placeholder="Имя", aria-label="Введите ваше имя")
-        input.contact-form__input(type="email", placeholder="Email", aria-label="Введите ваш email")
-        textarea.contact-form__textarea(type="email", placeholder="Ваше сообщение", aria-label="Введите ваше сообщение")
+        input.contact-form__input(type="text", placeholder="Имя", aria-label="Введите ваше имя" required minlength="2" maxlength="25")
+        input.contact-form__input(type="email", placeholder="Email", aria-label="Введите ваш email" required minlength="5" maxlength="50")
+        textarea.contact-form__textarea(type="email", placeholder="Ваше сообщение", aria-label="Введите ваше сообщение" required minlength="1" maxlength="140")
         .contact-form__menu
-          button.contact-form__btn.contact-form__btn--submit(type="sumbit") Отправить
+          button.contact-form__btn.contact-form__btn--submit(type="submit") Отправить
           button.contact-form__btn.contact-form__btn--reset(type="reset") Очистить
     button.criticism__down-btn.up-btn
       +icon('arrow_down', 'down-arrow down-arrow--rotated')
       
   +footer('works')
+  .form-message
+    span.form-message__title Сообщение отправлено
+    button.form-message__button Закрыть

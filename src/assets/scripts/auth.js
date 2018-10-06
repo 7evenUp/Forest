@@ -1,2 +1,4 @@
-import "./modules/flip-card.js";
-import "./modules/webGL.js";
+import "./modules/flip-card";
+import "./modules/webGL";
+import "./modules/preloader";
+import "./modules/auth-form-validate";

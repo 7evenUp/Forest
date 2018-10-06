@@ -24,10 +24,84 @@
     }
   }
 }
+// .parallax {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   perspective: 100px;
+
+//   &__layer {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     transform-style: preserve-3d;
+//   }
+
+//   &__image {
+//     bottom: 0;
+//     left: 50%;
+//     transform: translateX(-50%);
+//   }
+
+//   &__content {
+//     height: 2000px;
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     right: 0;
+//   }
+// }
+.parallax__image {
+  display: none;
+  position: absolute;
+
+  @media (min-width: 768px) {
+    display: block;
+
+    &--1 {
+      top: 40%;
+      left: 20%;
+      // transform: translateZ(0);
+    }
+
+    &--2 {
+      left: 5%;
+      top: 8%;
+      // transform: translateZ(-1px) scale(2);
+    }
+
+    &--3 {
+      top: 35%;
+      right: 3%;
+      // transform: translateZ(-2px) scale(3);
+    }  
+  }
+}
 .criticism {
+  // @media (min-width: 768px) {
+  //   // parallax
+  //   perspective: 1px;
+  //   overflow-x: hidden;
+  //   overflow-y: auto;
+  //   min-height: 100vh;
+
+  //   &__parallax-group {
+  //     position: relative;
+  //     height: 100vh;
+  //     transform-style: preserve-3d;
+  //   }
+  // }
+
   background: url(assets/images/bg/earth.png) no-repeat, #f4f5f0;
   background-size: cover;
   padding: 60px 0 255px 0;
+  position: relative;
 
   @include phone {
     padding-bottom: 375px;

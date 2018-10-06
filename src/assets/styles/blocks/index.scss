@@ -1,6 +1,5 @@
 .welcome-section {
   background: linear-gradient(to bottom, rgba(0, 0 ,0 , 0.30) 35%, rgba(0, 0 ,0 , 0.0) 50%, rgba(0, 0 ,0 , 0.30) 65%);
-              // url('assets/images/bg/water.jpg') no-repeat center top;
   background-size: cover;
   height: 100vh;
   min-height: 600px;
@@ -9,6 +8,12 @@
   justify-content: space-between;
   position: relative;
   top: 0;
+
+  @media (max-width: 980px) {
+    background: linear-gradient(to bottom, rgba(0, 0 ,0 , 0.30) 35%, rgba(0, 0 ,0 , 0.0) 50%, rgba(0, 0 ,0 , 0.30) 65%),
+                url('assets/images/bg/water.jpg') no-repeat center top;
+    background-size: cover;
+  }
 }
 #webgl-container {
   position: absolute;

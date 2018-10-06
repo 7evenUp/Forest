@@ -101,3 +101,60 @@
     }
   }
 }
+.form-message {
+  display: none;
+  position: fixed;
+  width: 280px;
+  min-height: 112px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  z-index: 999;
+  padding: 10px 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &--succeeded {
+    display: flex;
+
+    .form-message__button {
+      background: #4e8839;
+    }
+  }
+
+  &--failed {
+    display: flex;
+    .form-message__button {
+      background: #f44336;
+
+      &:hover {
+        background: #d32f2f;
+      }
+    }
+  }
+  
+  &__title {
+    font-size: 16px;
+    color: #373e42;
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__button {
+    background: #4e8839;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    &:hover {
+      background: #6c9c5a;
+    }
+  }
+}
