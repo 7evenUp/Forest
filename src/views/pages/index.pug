@@ -26,15 +26,15 @@ block content
             form.auth-form#authorization-form(method="post", enctype="multipart/form-data", action="#")
               fieldset.auth-form__fieldset
                 .auth-form__text--overlay
+                  input.auth-form__text-input#auth-form__login(type="text", name="login", placeholder="Логин", required, minlength="8", maxlength="25")
                   label.auth-form__text-label(for="auth-form__login")
                     +icon('login', 'text-input__icon')
-                  input.auth-form__text-input#auth-form__login(type="text", name="login", placeholder="Логин", required, minlength="8", maxlength="25")
                 .auth-form__text--overlay
+                  input.auth-form__text-input#auth-form__password(type="password", name="password", placeholder="Пароль", required, minlength="8", maxlength="25")
                   label.auth-form__text-label(for="auth-form__password")
                     +icon('password', 'text-input__icon')
-                  input.auth-form__text-input#auth-form__password(type="password", name="password", placeholder="Пароль", required, minlength="8", maxlength="25")
               fieldset.auth-form__fieldset
-                input.auth-form__checkbox-input#auth-form__checkbox(type="checkbox", required)
+                input.auth-form__checkbox-input#auth-form__checkbox(type="checkbox")
                 label.auth-form__checkbox-label(for="auth-form__checkbox") Я человек
                   +icon('check', 'checkbox-label__icon')
               fieldset.auth-form__fieldset
@@ -57,3 +57,7 @@ block content
       .copyright
         p.copyright__text
           != '<span class="copyright__creator">&copy; Шелудешев Артём</span> <span class="copyright__barrier">|</span> <span class="copyright__info">создано с любовью в Loftschool | 2018</span>'
+
+    .login-message.login-message--hidden
+      span.login-message__title Неверный логин или пароль
+      button.login-message__button Закрыть

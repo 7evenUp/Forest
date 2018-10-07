@@ -55,12 +55,16 @@ input, textarea, button {
   outline: none;
   padding: 0;
 }
-input:valid, textarea:valid {
+input:focus:required:valid, textarea:focus:required:valid {
   box-shadow: 0 0 15px 0 #4e8839;
-  border: 1px solid #4e8839;
+  border-color: #4e8839;
+}
+input:valid, textarea:valid {
+  border-color: #4e8839;
+  box-shadow: 0 0 15px 0 #4e8839;
 }
 
-input:invalid, textarea:invalid {
+input:focus:required:invalid, textarea:focus:required:invalid {
   box-shadow: 0 0 15px 0 #F44336;
-  border: 1px solid #F44336;
+  border-color: #F44336;
 }

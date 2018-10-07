@@ -2,8 +2,8 @@
   'use strict';
 
   const form = document.querySelector('.contact-form__content');
-  const formClass = 'form-message';
-  const modal = document.querySelector(`.${formClass}`);
+  const modalClass = 'form-message';
+  const modal = document.querySelector(`.${modalClass}`);
   const errorTitle = modal.querySelector('.form-message__title');
   const closeButton = modal.querySelector('.form-message__button');
   const sendURL = '#';
@@ -14,7 +14,7 @@
   function addClickEventListener (target) {
     target.addEventListener('click', () => {
       modal.classList.forEach((item) => {
-        if (item !== formClass) modal.classList.remove(item);
+        if (item !== modalClass) modal.classList.remove(item);
       })
     });
   }

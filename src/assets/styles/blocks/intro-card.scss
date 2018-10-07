@@ -159,8 +159,12 @@
   margin-left: 44px;
   max-height: 45px;
 
-  &:invalid.text-input__icon {
-    fill: #F44336;
+  &:valid + label > svg {
+    fill: #4e8839;
+  }
+
+  &:focus:required:invalid + label > svg {
+    fill: #f44336;
   }
 
   &:focus {

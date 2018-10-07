@@ -14,10 +14,11 @@ block content
       nav.articles
         ul.articles__list
           each item in [['Мои любимые цитаты', true],['Самое важное в SASS', false], ['Приёмы в вёрстке, без которых не обходится ни один сайт', false], ['Самый необходимый набор Gulp плагинов', false], ['Почему я выбрал Pug', false]]
-            li.articles__item
-              if item[1]
-                button.articles__link.articles__link--active #{item[0]}
-              else
+            if item[1]
+              li.articles__item.articles__item--active
+                button.articles__link #{item[0]}
+            else
+              li.articles__item
                 button.articles__link #{item[0]}
     .blog__content
       article.article
