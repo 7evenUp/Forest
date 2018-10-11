@@ -16,7 +16,10 @@ html(lang="ru")
     title Portfolio | #{title}
     link(rel='stylesheet' href='main.min.css')
   body
-    .wrapper
+    .wrapper.js-preloader-wrapper
+
+      include ./common/preloader
+
       .maincontent
         block content
       include ./common/site-menu-btn.pug

@@ -5,12 +5,12 @@ let blur = (function() {
   return {
     set: function() {
       let imgWidth = document.querySelector('.criticism').offsetWidth,
-        imgHeight = document.querySelector('.criticism').offsetHeight,
-        posLeft = -wrapper.offsetLeft,
-        criticismOffsetTop = document.querySelector('.criticism').offsetTop,
-        formOffsetTop = document.querySelector('.contact-form').offsetTop,
-        posTop = -(formOffsetTop - criticismOffsetTop),
-        blurCSS = form.style;
+          imgHeight = document.querySelector('.criticism').offsetHeight,
+          posLeft = -wrapper.offsetLeft,
+          criticismOffsetTop = document.querySelector('.criticism').offsetTop,
+          formOffsetTop = document.querySelector('.contact-form').offsetTop,
+          posTop = -(formOffsetTop - criticismOffsetTop),
+          blurCSS = form.style;
 
       blurCSS.width = `${imgWidth}px`;
       blurCSS.height = `${imgHeight}px`;
