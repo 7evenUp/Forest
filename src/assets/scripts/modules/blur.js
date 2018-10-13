@@ -1,6 +1,6 @@
 let blur = (function() {
   let wrapper = document.querySelector('.contact-form'),
-    form = document.querySelector('.contact-form__background');
+      form = document.querySelector('.contact-form__background');
 
   return {
     set: function() {

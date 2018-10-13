@@ -1,18 +1,5 @@
 var map;
 
-// var myStyles = [
-//   {
-//     featureType: 'water',
-//     elementType: 'geometry',
-//     stylers: [{color: '#6c9c5a'}]
-//   },
-//   {
-//     featureType: 'water',
-//     elementType: 'geometry',
-//     stylers: [{color: '#373e42'}]
-//   }
-// ];
-
 var initMap =(function () {
   
   var coordinates = {lat: 60.048339, lng: 30.322016},
@@ -21,12 +8,7 @@ var initMap =(function () {
     center: coordinates,
     zoom: 15,
     scrollwheel: false,
-    disableDefaultUI: true
-  }),
-
-  marker = new google.maps.Marker({
-    position: {lat: 60.047709, lng: 30.334475},
-    map: map,
+    disableDefaultUI: true,
     styles: [
       {
         featureType: 'water',
@@ -44,6 +26,11 @@ var initMap =(function () {
         stylers: [{color: '#373e42'}]
       }
     ]
+  }),
+
+  marker = new google.maps.Marker({
+    position: {lat: 60.047709, lng: 30.334475},
+    map: map
   })
 
 })();
