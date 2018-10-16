@@ -3,13 +3,26 @@ import VueRouter from 'vue-router';
 import axios from 'axios';
 
 Vue.use(VueRouter);
+
+import works from './components/works.vue';
+import skills from './components/skills.vue';
+import blogs from './components/blogs.vue';
+
+const WorksComponent = { template: `<works></works>`, components: { works }};
+const SkillsComponent = { template: `<skills></skills>`, components: { skills }};
+const BlogsComponent = { template: `<blogs></blogs>`, components: { blogs }};
+
+const routes = [
+  { path: '/works', component: WorksComponent},
+  { path: '/skills', component: SkillsComponent},
+  { path: '/blogs', component: BlogsComponent}
+];
+
+const router = new VueRouter({ mode: 'history', routes });
+
 const guard = axios.create({
   baseURL: 'https://webdev-api.loftschool.com/'
 });
-
-const routes = [];
-
-const router = new VueRouter({ mode: 'history', routes });
 
 router.beforeEach((to, from, next) => {
   guard.get('/user', {

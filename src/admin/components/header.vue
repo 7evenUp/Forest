@@ -12,6 +12,12 @@
     align-items: center;
     height: 100%;
 
+    @media (max-width: 480px) {
+      flex-direction: column-reverse;
+      justify-content: space-around;
+      padding: 8px 0;
+    }
+
     &__title {
       color: white;
       font-size: 28px;

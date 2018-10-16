@@ -3,8 +3,14 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+import works from './modules/skills'
 import skills from './modules/skills'
+import blogs from './modules/skills'
 
 export default new Vuex.Store({
-  modules: { skills }
+  modules: {
+    works, 
+    skills,
+    blogs
+  }
 })

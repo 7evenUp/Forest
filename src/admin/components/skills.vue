@@ -11,12 +11,12 @@
           :type="type"
           :skills="skills"
         )
-
 </template>
 
 <script>
   import skillsRow from './skillsRow.vue';
   import form from './form.vue';
+  import { mapActions, mapState } from 'vuex';
 
   export default {
     components: {
@@ -37,6 +37,19 @@
           { id: 2, name: 'Workflow'}
         ]
       }
+    },
+    computed: {
+      ...mapState('skills', {
+        skills: state => state.data
+      })
+    },
+    created() {
+      this.fetchSkills();
+    },
+    methods: {
+      ...mapActions({
+        fetchSkills: 'skills/fetch'
+      })
     }
   }
 </script>

@@ -6,35 +6,17 @@
       aside.admin-tabs
         tabs
       section.admin-content
-        skills(
-          :skills="skills"
-        )
+        router-view
 </template>
 
 <script>
 import header from './components/header.vue';
 import tabs from './components/tabs.vue';
-import skills from './components/skills.vue';
-import { mapActions, mapState } from 'vuex';
 
 export default {
   components: {
     AppHeader: header,
-    tabs,
-    skills
-  },
-  computed: {
-    ...mapState('skills', {
-      skills: state => state.data
-    })
-  },
-  created() {
-    this.fetchSkills();
-  },
-  methods: {
-    ...mapActions({
-      fetchSkills: 'skills/fetch'
-    })
+    tabs
   }
 };
 </script>
@@ -42,6 +24,7 @@ export default {
 <style lang="scss">
   #root {
     height: 100%;
+    overflow-x: hidden;
   }
 
   .admin-header {
@@ -55,7 +38,7 @@ export default {
   .admin-tabs {
     background-color: #f0efe9;
     width: 100vw;
-    height: 60px;
+    min-height: 60px;
   }
   .admin-content {
     height: calc(100% - 60px);
