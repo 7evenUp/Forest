@@ -23,12 +23,6 @@
       skillsRow,
       AppForm: form
     },
-    props: {
-      skills: {
-        type: Array,
-        default: () => []
-      }
-    },
     data() {
       return {
         categories: [
@@ -44,7 +38,7 @@
       })
     },
     created() {
-      this.fetchSkills();
+      this.fetchSkills()
     },
     methods: {
       ...mapActions({

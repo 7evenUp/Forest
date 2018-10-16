@@ -4,18 +4,34 @@
       h2.works__title Страница "Мои работы"
 
       .works__content
-        works-add.works__form
-        works-list
+        works-add
+        works-list(
+          :works="works"
+        )
 </template>
 
 <script>
   import worksAdd from './worksAdd.vue';
   import worksList from './worksList.vue';
+  import { mapActions, mapState } from 'vuex';
 
   export default {
     components: {
       worksAdd,
       worksList
+    },
+    computed: {
+      ...mapState('works', {
+        works: state => state.data
+      })
+    },
+    created() {
+      this.fetchWorks()
+    },
+    methods: {
+      ...mapActions({
+        fetchWorks: 'works/fetch'
+      })
     }
   }
 </script>
@@ -31,9 +47,12 @@
 
     &__content {
       display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
       justify-content: space-between;
+
+      @media (max-width: 980px) {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
     }
   }
 </style>

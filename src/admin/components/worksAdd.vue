@@ -1,21 +1,70 @@
 <template lang="pug">
-  div
-    form.form
-      h3.form__title Добавить работу
-      input.form__input(type="text" placeholder="Название проекта")
-      input.form__input(type="text" placeholder="Технологии")
-      input.form__input(type="text" placeholder="Ссылка")
-      label.file(for="file")
-        input.file__input(type="file" id="file" name="file")
-        img.file__image(src="../content/download_img.png" alt="Загрузить картинку")
-        span.file__label Загрузить картинку
-      button.form__button(type="button") Добавить
+  form.form
+    h3.form__title Добавить работу
+    input.form__input(
+      v-model="newWork.title"
+      type="text"
+      placeholder="Название проекта"
+    )
+    input.form__input(
+      v-model="newWork.techs"
+      type="text"
+      placeholder="Технологии"
+    )
+    input.form__input(
+      v-model="newWork.link"
+      type="text"
+      placeholder="Ссылка"
+    )
+    label.file(for="file")
+      input.file__input(
+        @change="handleFiles"
+        type="file"
+        ref="myFiles"
+        id="file"
+        name="file"
+      )
+      img.file__image(src="../content/download_img.png" alt="Загрузить картинку")
+      span.file__label Загрузить картинку
+    button.form__button(
+      @click="addNewWork(newWork)"
+      type="button"
+    ) Добавить
 
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
   export default {
+    data() {
+      return {
+        newWork: {
+          title: '',
+          techs: '',
+          link: '',
+          photo: ''
+        }
+      }
+    },
+    methods: {
+      handleFiles() {
+        const file = this.$refs.myFiles.files[0];
+        const reader = new FileReader();
+        console.log(file);
 
+        reader.addEventListener('load', () => {
+          this.newWork.photo = reader.result;
+          console.log(reader.result);
+          console.log(this.newWork.photo);
+
+        });
+        reader.readAsDataURL(file)
+
+      },
+      ...mapActions({
+        addNewWork: 'works/add'
+      })
+    }
   }
 </script>
 
@@ -24,6 +73,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-right: 10px;
+
+    @media (max-width: 980px) {
+      margin-bottom: 30px;
+    }
 
     &__title {
       font-size: 16px;
@@ -44,6 +98,10 @@
 
       &:nth-child(4) {
         margin-bottom: 60px;
+
+        @media (max-width: 980px) {
+          margin-bottom: 30px;
+        }
       }
     }
 
@@ -57,6 +115,10 @@
       transition: all 0.2s;
       margin-top: 60px;
       font-weight: 600;
+
+      @media (max-width: 980px) {
+        margin-top: 30px;
+      }
 
       &:hover {
         background-color: #4e8839;
