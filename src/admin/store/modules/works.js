@@ -1,18 +1,18 @@
 const works = {
   namespaced: true,
   state: {
-    data2: []
+    data: []
   },
   mutations: {
-    loadWorks: (state, works) => state.data2 = works,
-    addNewWork: (state, newWork) => state.data2.push(newWork),
-    removeWork: (state, workId) => state.data2 = state.data2.filter(work => work.id !== workId)
+    loadWorks: (state, works) => state.data = works,
+    addNewWork: (state, newWork) => state.data.push(newWork),
+    removeWork: (state, workId) => state.data = state.data.filter(work => work.id !== workId)
   },
   actions: {
     fetch({commit}) {
       this.$axios.get('/works/31').then(
         response => {
-          commit('loadWorks', response.data2);
+          commit('loadWorks', response.data);
         },
         error => {
           console.error(error)
@@ -22,7 +22,7 @@ const works = {
     add({commit}, work) {
       this.$axios.post('/works', work).then(
         response => {
-          commit('addNewWork', response.data2);
+          commit('addNewWork', response.data);
         },
         error => {
           console.error(error)

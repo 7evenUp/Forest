@@ -8,7 +8,7 @@
   const modal = document.querySelector(`.${modalClass}`);
   const errorTitle = modal.querySelector('.login-message__title');
   const closeButton = modal.querySelector('.login-message__button');
-  const sendURL = '#';
+  const sendURL = 'https://webdev-api.loftschool.com/login';
   const xhrTimeout = 10000;
   const removeModalTimeout = 5000;
   const okStatus = 200;
@@ -21,6 +21,7 @@
 
   function onLoad (/*response*/) {
     // Переход на админку
+    window.location.href = "/admin";
     console.log('Succeeded');
   }
 
