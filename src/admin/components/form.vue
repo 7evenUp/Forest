@@ -26,8 +26,6 @@
 
             localStorage.setItem('ttl', ttl);
             localStorage.setItem('token', response.data.token);
-
-            // window.location.href = "/admin";
           }
         });
       }

@@ -1,3 +1,4 @@
+import axios from 'axios';
 (function () {
   'use strict';
 
@@ -19,13 +20,18 @@
     });
   }
 
-  function onLoad (/*response*/) {
-    // Переход на админку
+  function onLoad (response) {
+    const ttl = Math.floor(Date.now() / 1000 + response.ttl);
+
+    localStorage.setItem('ttl', ttl);
+    localStorage.setItem('token', response.token);
+
+    axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
+
     window.location.href = "/admin";
-    console.log('Succeeded');
   }
 
-  function onError (/*errorMessage*/) {
+  function onError () {
     errorTitle.textContent = 'Неверный логин или пароль';
     modal.classList.remove('login-message--hidden');
     addClickEventListener(closeButton);
@@ -77,7 +83,7 @@
       setTimeout(() => {
         modal.classList.add('login-message--hidden');
       }, removeModalTimeout)
-      form.addEventListener('submit', onFormSubmit);
+      // form.addEventListener('submit', onFormSubmit);
     } else {
       sendFormData(onLoad, onError);
       form.reset();

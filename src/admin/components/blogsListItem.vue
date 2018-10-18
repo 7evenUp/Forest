@@ -1,42 +1,39 @@
 <template lang="pug">
-  tr.work-item
-    td.work-item__name Сайт школы онлайн образования
-    td.work-item__technologies C++, C#, Python, Excel, Word
-    td.work-item__link
-      a(href="" target="_blank") porn.hub
-    td.work-item__image
-      img(src="" alt="Изображение проекта")
-    td.work-item__buttons
+  tr.blog-item
+    td.blog-item__name {{ blog.title }}
+    td.blog-item__date {{ blog.updated_at.slice(0, 10) }}
+    td.blog-item__content {{ blog.content }}
+    td.blog-item__buttons
       button(
         @click=""
         type="button"
       ).button.button--edit
       button(
-        @click="removeWork(work.id)"
+        @click="removeBlog(blog.id)"
         type="button"
       ).button.button--delete
 </template>
 
 <script>
   import { mapActions } from 'vuex';
-  
+
   export default {
     props: {
-      work: {
+      blog: {
         type: Object,
         default: () => {}
       }
     },
     methods: {
       ...mapActions({
-        removeWork: 'works/remove'
+        removeBlog: 'blogs/remove'
       })
     }
   }
 </script>
 
-<style lang="scss" scoped>
-  .work-item {
+<style lang="scss">
+  .blog-item {
 
     td {
       text-align: left;
@@ -45,23 +42,15 @@
       color: #455a64;
     }
 
-    &__technologies {
-      text-transform: uppercase;
+    &__date {
+      white-space: nowrap;
     }
 
-    &__link {
+    &__content {
+      max-width: 250px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-
-      a {
-        color: #455a64;
-      }
-    }
-
-    &__image {
-      max-width: 90%;
-      max-height: 90%;
     }
 
     &__buttons {
@@ -84,11 +73,11 @@
         transform: scale(1.05);
       }
       &--edit {
-        background: url(../content/pencil.png) no-repeat center;
+        background: grey url(../content/pencil.png) no-repeat center;
         margin-bottom: 10px;
       }
       &--delete {
-        background: url(../content/cancel.png) no-repeat center;
+        background: firebrick url(../content/cancel.png) no-repeat center;
       }
     }
   }

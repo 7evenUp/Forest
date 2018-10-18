@@ -1,33 +1,36 @@
 <template lang="pug">
   table.table
-    caption.table__caption Последние работы
+    caption.table__caption Последние записи
     tr.table__heading
       th Название
-      th Технологии
-      th Ссылка
-      th Превью
+      th Дата
+      th Содержание
       th
-    work-item
+    blog-item(
+      v-for="blog in blogs"
+      :key="blog.id"
+      :blog="blog"
+    )
 
 </template>
 
 <script>
-  import worksListItem from './worksListItem.vue';
+  import blogsListItem from './blogsListItem.vue';
 
   export default {
     components: {
-      workItem: worksListItem
+      blogItem: blogsListItem
     },
     props: {
-      works: {
+      blogs: {
         type: Array,
         default: () => []
       }
-    }
+    } 
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .table {
     border-collapse: collapse;
     background-color: white;
@@ -46,6 +49,13 @@
       border-bottom: 1px solid #6c9c5a;
       padding: 20px 0 20px 25px;
       text-align: left;
+    }
+
+    &__th {
+      &_textOverflow_ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 </style>

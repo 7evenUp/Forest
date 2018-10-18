@@ -3,7 +3,7 @@
     header.admin-header
       app-header
     main.admin-main
-      aside.admin-tabs
+      nav.admin-tabs
         tabs
       section.admin-content
         router-view
