@@ -5,6 +5,7 @@
 #### Дата_начала_обучения: '17.09.2018'
 #### Дата_окончания_обучения: '22.10.2018'
 #### Ссылка_на_GitHub_Pages: 'https://7evenup.github.io/Forest/dist/'
+#### Ссылка_на_админку: 'https://7evenup.github.io/Forest/dist/admin/'
 
 
 > Перед установкой зависимостей и запуском проекта убедитесь, что у вас установлена [последняя версия Node.js & NPM](https://nodejs.org/en/download/current/)

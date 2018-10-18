@@ -28,7 +28,7 @@ import axios from 'axios';
 
     axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
 
-    window.location.href = "./Forest/dist/admin/";
+    window.location.href = "./admin";
   }
 
   function onError () {
