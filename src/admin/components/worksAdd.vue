@@ -47,19 +47,16 @@
       }
     },
     methods: {
-      handleFiles() {
-        const file = this.$refs.myFiles.files[0];
-        const reader = new FileReader();
-        console.log(file);
+      handleFiles(evt) {
+        const file = evt.target.files;
 
-        reader.addEventListener('load', () => {
-          this.newWork.photo = reader.result;
-          console.log(reader.result);
-          console.log(this.newWork.photo);
+        if (file.length === 0) return;
 
-        });
-        reader.readAsDataURL(file)
+        console.log(file)
 
+        this.newWork.photo = file[0];
+
+        console.log(this.newWork.photo)
       },
       ...mapActions({
         addNewWork: 'works/add'

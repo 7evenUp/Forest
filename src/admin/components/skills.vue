@@ -1,7 +1,7 @@
 <template lang="pug">
   .content-container
     .skills
-      //- app-form
+      app-form
       h2.skills__title Страница "Обо мне"
       
       ul.skills__group
