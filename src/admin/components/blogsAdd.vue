@@ -1,30 +1,70 @@
 <template lang="pug">
-  form.form
+  form(v-if="editMode === false").form
     h3.form__title Добавить запись
     input.form__input(
       v-model="newBlog.title"
+      id="title"
       type="text"
       placeholder="Название поста"
     )
     input.form__input(
       v-model="newBlog.date"
+      id="date"
       type="text"
       placeholder="Дата"
     )
     textarea.form__textarea(
       v-model="newBlog.content"
+      id="textarea"
       placeholder="Чего-нибудь новенького?"
     )
     button.form__button(
       @click="addNewBlog(newBlog)"
       type="button"
     ) Добавить
+
+  form(v-else).form
+    h3.form__title Изменить запись
+    input.form__input(
+      v-model="blog.title"
+      value="blog.title"
+      id="title"
+      type="text"
+      placeholder="Название поста"
+    )
+    input.form__input(
+      v-model="blog.date"
+      value="blog.date"
+      id="date"
+      type="text"
+      placeholder="Дата"
+    )
+    textarea.form__textarea(
+      v-model="blog.content"
+      value="blog.content"
+      id="textarea"
+      placeholder="Чего-нибудь новенького?"
+    )
+    button.form__button(
+      @click="editBlog(blog); changeEditMode()"
+      type="button"
+    ) Сохранить изменения
 </template>
 
 <script>
   import { mapActions } from 'vuex';
 
   export default {
+    props: {
+      blog: {
+        type: Object,
+        default: () => {}
+      },
+      editMode: {
+        type: Boolean,
+        default: false
+      }
+    },
     data() {
       return {
         newBlog: {
@@ -36,8 +76,12 @@
     },
     methods: {
       ...mapActions({
-        addNewBlog: 'blogs/add'
-      })
+        addNewBlog: 'blogs/add',
+        editBlog: 'blogs/edit'
+      }),
+      changeEditMode() {
+        this.editMode = false;
+      }
     }
   }
 </script>

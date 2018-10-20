@@ -4,7 +4,10 @@
       h2.blogs__title Страница "Блог"
 
       .blogs__content
-        blogs-add
+        blogs-add(
+          :blog="blog"
+          :editMode="editMode"
+        )
         blogs-list(
           :blogs="blogs"
         )
@@ -20,10 +23,21 @@
       blogsAdd,
       blogsList
     },
+    data() {
+      return {
+        editMode: false
+      }
+    },
     computed: {
       ...mapState('blogs', {
-        blogs: state => state.data
+        blogs: state => state.data,
+        blog: state => state.blog
       })
+    },
+    watch: {
+      blog: function () {
+        this.editMode = true;
+      }
     },
     created() {
       this.fetchBlogs()

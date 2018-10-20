@@ -1,14 +1,14 @@
 <template lang="pug">
   tr.work-item
-    td.work-item__name Сайт школы онлайн образования
-    td.work-item__technologies C++, C#, Python, Excel, Word
+    td.work-item__name tetsd
+    td.work-item__technologies tetsd
     td.work-item__link
-      a(href="" target="_blank") porn.hub
+      a(href="" target="_blank")  asdasd
     td.work-item__image
       img(src="" alt="Изображение проекта")
     td.work-item__buttons
       button(
-        @click=""
+        @click="editWork(work.id)"
         type="button"
       ).button.button--edit
       button(
@@ -29,6 +29,7 @@
     },
     methods: {
       ...mapActions({
+        editWork: 'works/edit',
         removeWork: 'works/remove'
       })
     }
@@ -37,12 +38,15 @@
 
 <style lang="scss" scoped>
   .work-item {
-
     td {
       text-align: left;
       padding: 30px 0 30px 25px;
       font-size: 14px;
       color: #455a64;
+
+      &.active {
+        background-color: #daf2d1;
+      }
     }
 
     &__technologies {

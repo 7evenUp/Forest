@@ -6,7 +6,8 @@
       nav.admin-tabs
         tabs
       section.admin-content
-        router-view
+        transition(name="component-fade" mode="out-in")
+          router-view
 </template>
 
 <script>
@@ -22,6 +23,12 @@ export default {
 </script>
 
 <style lang="scss">
+  .component-fade-enter-active, .component-fade-leave-active {
+    transition: opacity .4s ease-in-out;
+  }
+  .component-fade-enter, .component-fade-leave-to {
+    opacity: 0;
+  }
   #root {
     height: 100%;
     overflow-x: hidden;

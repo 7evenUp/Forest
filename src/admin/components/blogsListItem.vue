@@ -1,11 +1,11 @@
 <template lang="pug">
   tr.blog-item
     td.blog-item__name {{ blog.title }}
-    td.blog-item__date {{ blog.updated_at.slice(0, 10) }}
+    td.blog-item__date {{ convertDate(blog.date) }}
     td.blog-item__content {{ blog.content }}
     td.blog-item__buttons
       button(
-        @click=""
+        @click="editBlog(blog)"
         type="button"
       ).button.button--edit
       button(
@@ -26,8 +26,12 @@
     },
     methods: {
       ...mapActions({
+        editBlog: 'blogs/edit',
         removeBlog: 'blogs/remove'
-      })
+      }),
+      convertDate(date) {
+        return new Date(date * 1000).toLocaleDateString();
+      }
     }
   }
 </script>
@@ -73,11 +77,11 @@
         transform: scale(1.05);
       }
       &--edit {
-        background: grey url(../content/pencil.png) no-repeat center;
+        background: url(../content/pencil.png) no-repeat center;
         margin-bottom: 10px;
       }
       &--delete {
-        background: firebrick url(../content/cancel.png) no-repeat center;
+        background: url(../content/cancel.png) no-repeat center;
       }
     }
   }

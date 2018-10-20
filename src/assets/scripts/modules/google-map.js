@@ -1,8 +1,9 @@
-var map;
+var initMap = function () {
+  var google = window.google;
+  var marker;
+  var map;
 
-var initMap =(function () {
-  
-  var coordinates = {lat: 60.048339, lng: 30.322016},
+  var coordinates = {lat: 60.048339, lng: 30.322016};
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: coordinates,
@@ -26,11 +27,13 @@ var initMap =(function () {
         stylers: [{color: '#373e42'}]
       }
     ]
-  }),
+  });
 
   marker = new google.maps.Marker({
     position: {lat: 60.047709, lng: 30.334475},
     map: map
-  })
+  });
 
-})();
+  console.log(marker);
+};
+initMap();

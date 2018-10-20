@@ -4,7 +4,9 @@
       h2.works__title Страница "Мои работы"
 
       .works__content
-        works-add
+        works-add(
+          :work="work"
+        )
         works-list(
           :works="works"
         )
@@ -22,7 +24,8 @@
     },
     computed: {
       ...mapState('works', {
-        works: state => state.data
+        works: state => state.data,
+        work: state => state.work
       })
     },
     created() {

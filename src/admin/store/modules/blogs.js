@@ -1,11 +1,13 @@
 const blogs = {
   namespaced: true,
   state: {
-    data: []
+    data: [],
+    blog: {}
   },
   mutations: {
     loadBlogs: (state, blogs) => state.data = blogs,
     addNewBlog: (state, newBlog) => state.data.push(newBlog),
+    editBlog: (state, blog) => state.blog = blog.post,
     removeBlog: (state, blogId) => state.data = state.data.filter(blog => blog.id !== blogId)
   },
   actions: {
@@ -29,10 +31,22 @@ const blogs = {
         }
       );
     },
+    edit({commit}, blog) {
+      this.$axios.post(`/posts/${blog.id}`, blog).then(
+        response => {
+          commit('editBlog', response.data);
+          commit('removeBlog', blog.id);
+          commit('addNewBlog', blog);
+        },
+        error => {
+          console.log(error)
+        }
+      )
+    },
     remove({commit}, blogId) {
       this.$axios.delete(`/posts/${blogId}`).then(
         response => {
-          commit('removeBlog', blogId)
+          commit('removeBlog', blogId);
         },
         error => {
           console.error(error);

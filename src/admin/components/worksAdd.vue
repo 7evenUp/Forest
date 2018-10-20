@@ -35,7 +35,14 @@
 
 <script>
   import { mapActions } from 'vuex';
+
   export default {
+    props: {
+      work: {
+        type: Object,
+        default: () => {}
+      }
+    },
     data() {
       return {
         newWork: {
@@ -52,11 +59,7 @@
 
         if (file.length === 0) return;
 
-        console.log(file)
-
         this.newWork.photo = file[0];
-
-        console.log(this.newWork.photo)
       },
       ...mapActions({
         addNewWork: 'works/add'
