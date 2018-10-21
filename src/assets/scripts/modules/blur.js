@@ -8,13 +8,17 @@ let blur = (function() {
           imgHeight = document.querySelector('.criticism').offsetHeight,
           posLeft = -wrapper.offsetLeft,
           criticismOffsetTop = document.querySelector('.criticism').offsetTop,
-          formOffsetTop = document.querySelector('.contact-form').offsetTop,
-          posTop = -(formOffsetTop - criticismOffsetTop),
+          formOffsetTop = document.querySelector('.contact-form').offsetTop + criticismOffsetTop,
+          posTop = criticismOffsetTop - formOffsetTop,
           blurCSS = form.style;
 
       blurCSS.width = `${imgWidth}px`;
       blurCSS.height = `${imgHeight}px`;
       blurCSS.transform = `translate(${posLeft}px,${posTop}px)`;
+
+      console.log(criticismOffsetTop);
+      console.log(formOffsetTop);
+      console.log(posTop);
     },
   };
 }());

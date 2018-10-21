@@ -41,7 +41,6 @@
 
         let windowY = window.pageYOffset; // Переменная windowY хранит информацию на сколько пикселей прокручена страница по вертикали
         const indexBtn = evt.currentTarget.dataset.indexButton; // Переменная indexBtn хранит данные из атрибута data-index-button текущей кнопки
-        console.log(indexBtn);
         const currentArticle = document.querySelector(`[data-article="${indexBtn}"]`); // Ищем элемент, у которого значение атрибута data-article совпадает со значением атрибута data-index-button текущей кнопки, и кладем в переменную currentArticle
         const coord = currentArticle.getBoundingClientRect().top; // Переменная coord хранит позицию текущей статьи относительно начала окна браузера 
         let start = null; // 
@@ -98,7 +97,7 @@
   function isVisible(element) {
     let scroll = window.pageYOffset; // Переменная scroll хранит информацию на сколько пикселей прокручена страница по вертикали
 
-    return scroll >= element.top - 5 && scroll < element.bottom;
+    return scroll >= element.top && scroll < element.bottom;
   }
 
   function setPositionArticles(elements) {

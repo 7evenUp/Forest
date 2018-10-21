@@ -44,6 +44,7 @@
       background-color: #6c9c5a;
       height: 100vh;
       box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+      z-index: 999;
     }
 
     &--active {
@@ -121,7 +122,6 @@
     width: 240px;
 
     &--active .articles__link {
-      font-weight: 700;
       color: #4e8839;
       position: relative;
 

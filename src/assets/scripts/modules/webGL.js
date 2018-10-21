@@ -74,7 +74,7 @@ function render() {
 
 document.addEventListener('mousemove', function (event) {
   TweenLite.to(uniforms.u_mouse.value, 1, {
-    x: ((event.pageX / window.innerWidth) - 0.5) * 1.5,
-    y: ((event.pageY / window.innerHeight) - 0.5) * 1.5
+    x: ((event.pageX / window.innerWidth) - 0.5) * 2.5,
+    y: ((event.pageY / window.innerHeight) - 0.5) * 2.5
   })
 }) 
