@@ -27,8 +27,11 @@
 .socials-list__icon--github {
   width: 26px;
 }
-.socials-list__icon--in {
-  width: 24px;
+.socials-list__icon--inst {
+  height: 32px;
+  width: 32px;
+  margin-top: -4px;
+  margin-left: -4px;
 }
 .socials-list--header .socials-list__icon {
   fill: $white;
