@@ -97,7 +97,7 @@
   function isVisible(element) {
     let scroll = window.pageYOffset; // Переменная scroll хранит информацию на сколько пикселей прокручена страница по вертикали
 
-    return scroll >= element.top && scroll < element.bottom;
+    return scroll >= element.top - 150 && scroll < element.bottom;
   }
 
   function setPositionArticles(elements) {
