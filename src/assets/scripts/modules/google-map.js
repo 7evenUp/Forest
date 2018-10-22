@@ -204,8 +204,6 @@ var initMap = function () {
     icon: image
   });
   marker.addListener('click', toggleBounce);
-
-  console.log(marker);
 };
 function toggleBounce() {
   if (marker.getAnimation() !== null) {
