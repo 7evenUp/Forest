@@ -1,14 +1,14 @@
 <template lang="pug">
   tr.work-item
-    td.work-item__name tetsd
-    td.work-item__technologies tetsd
+    td.work-item__name {{ work.title }}
+    td.work-item__technologies {{ work.techs }}
     td.work-item__link
-      a(href="" target="_blank")  asdasd
+      a(:href="work.link" target="_blank")  {{ work.link }}
     td.work-item__image
-      img(src="" alt="Изображение проекта")
+      img#image(:src="`https://webdev-api.loftschool.com/${work.photo}`" alt="Изображение проекта")
     td.work-item__buttons
       button(
-        @click="editWork(work.id)"
+        @click="handleClick"
         type="button"
       ).button.button--edit
       button(
@@ -27,11 +27,18 @@
         default: () => {}
       }
     },
+    data() {
+      return {
+        editMode: false
+      }
+    },
     methods: {
       ...mapActions({
         editWork: 'works/edit',
         removeWork: 'works/remove'
-      })
+      }),
+      handleClick() {
+        this.$emit('fillFormData', this.work)      }
     }
   }
 </script>
@@ -71,7 +78,12 @@
     &__buttons {
       display: flex;
       flex-direction: column;
-      padding: 30px 40px !important;
+      height: 100%;
+    }
+
+    #image {
+      max-width: 90%;
+      max-height: 90%;
     }
     
     .button {
@@ -88,11 +100,11 @@
         transform: scale(1.05);
       }
       &--edit {
-        background: url(../content/pencil.png) no-repeat center;
+        background: url(/pencil.png) no-repeat center;
         margin-bottom: 10px;
       }
       &--delete {
-        background: url(../content/cancel.png) no-repeat center;
+        background: url(/cancel.png) no-repeat center;
       }
     }
   }

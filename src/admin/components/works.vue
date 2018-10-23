@@ -6,9 +6,11 @@
       .works__content
         works-add(
           :work="work"
+          :editMode="editMode"
         )
         works-list(
           :works="works"
+          @fillFormData="fillFormData"
         )
 </template>
 
@@ -22,10 +24,16 @@
       worksAdd,
       worksList
     },
+    data() {
+      return {
+        work: {},
+        editMode: false
+      }
+    },
     computed: {
       ...mapState('works', {
         works: state => state.data,
-        work: state => state.work
+        // work: state => state.work
       })
     },
     created() {
@@ -34,7 +42,10 @@
     methods: {
       ...mapActions({
         fetchWorks: 'works/fetch'
-      })
+      }),
+      fillFormData(work) {
+        this.work = work;
+      }
     }
   }
 </script>

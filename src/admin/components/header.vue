@@ -2,7 +2,7 @@
   .content-container
     .header-overlay
       h1.header-overlay__title Панель администрирования
-      a(href="#").header-overlay__link Вернуться на сайт
+      a(href="index.html").header-overlay__link Вернуться на сайт
 </template>
 
 <style lang="scss" scoped>

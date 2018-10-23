@@ -77,11 +77,11 @@
         transform: scale(1.05);
       }
       &--edit {
-        background: url(../content/pencil.png) no-repeat center;
+        background: url(/pencil.png) no-repeat center;
         margin-bottom: 10px;
       }
       &--delete {
-        background: url(../content/cancel.png) no-repeat center;
+        background: url(/cancel.png) no-repeat center;
       }
     }
   }

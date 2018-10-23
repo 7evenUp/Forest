@@ -1,8 +1,8 @@
 <template lang="pug">
   ul.tabs-list
-    router-link(to="/works", active-class="tabs-list__item--active").tabs-list__item Мои работы
-    router-link(to="/skills", active-class="tabs-list__item--active").tabs-list__item Обо мне
-    router-link(to="/blogs", active-class="tabs-list__item--active").tabs-list__item Блог
+    router-link(to="/works", replace, active-class="tabs-list__item--active").tabs-list__item Мои работы
+    router-link(to="/skills", replace, active-class="tabs-list__item--active").tabs-list__item Обо мне
+    router-link(to="/blogs", replace, active-class="tabs-list__item--active").tabs-list__item Блог
 </template>
 
 <style lang="scss">

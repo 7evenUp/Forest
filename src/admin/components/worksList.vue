@@ -7,7 +7,12 @@
       th Ссылка
       th Превью
       th
-    work-item
+    work-item(
+      v-for="work in works"
+      :key="work.id"
+      :work="work"
+      @fillFormData="fillFormData"
+    )
 
 </template>
 
@@ -22,6 +27,11 @@
       works: {
         type: Array,
         default: () => []
+      }
+    },
+    methods: {
+      fillFormData(work) {
+        this.$emit('fillFormData', work)
       }
     }
   }
