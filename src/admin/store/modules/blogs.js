@@ -7,8 +7,10 @@ const blogs = {
   mutations: {
     loadBlogs: (state, blogs) => state.data = blogs,
     addNewBlog: (state, newBlog) => state.data.push(newBlog),
-    editBlog: (state, blog) => state.blog = blog.post,
-    removeBlog: (state, blogId) => state.data = state.data.filter(blog => blog.id !== blogId)
+    removeBlog: (state, blogId) => state.data = state.data.filter(blog => blog.id !== blogId),
+    editBlog: (state, editedBlog) => state.data = state.data.map(blog => {
+      return blog.id === editedBlog.id ? editedBlog : blog
+    }) 
   },
   actions: {
     fetch({commit}) {
@@ -22,7 +24,11 @@ const blogs = {
       );
     },
     add({commit}, blog) {
-      this.$axios.post('/posts', blog).then(
+      const formData = new FormData();
+
+      Object.keys(blog).forEach(key => formData.append(key, blog[key]));
+
+      this.$axios.post('/posts', formData).then(
         response => {
           commit('addNewBlog', response.data);
         },
@@ -30,18 +36,6 @@ const blogs = {
           console.error(error)
         }
       );
-    },
-    edit({commit}, blog) {
-      this.$axios.post(`/posts/${blog.id}`, blog).then(
-        response => {
-          commit('editBlog', response.data);
-          commit('removeBlog', blog.id);
-          commit('addNewBlog', blog);
-        },
-        error => {
-          console.log(error)
-        }
-      )
     },
     remove({commit}, blogId) {
       this.$axios.delete(`/posts/${blogId}`).then(
@@ -52,6 +46,20 @@ const blogs = {
           console.error(error);
         }
       );
+    },
+    edit({commit}, blog) {
+      const formData = new FormData();
+
+      Object.keys(blog).forEach(key => formData.append(key, blog[key]));
+
+      return this.$axios.post(`/posts/${blog.id}`, formData).then(
+        response => {
+          commit('editBlog', response.data.post);
+          return response
+        }).catch(error => {
+          console.log(error);
+          return Promise.reject(error);
+        })
     }
   }
 };

@@ -6,7 +6,10 @@ const skills = {
   mutations: {
     loadSkills: (state, skills) => state.data = skills,
     addNewSkill: (state, newSkill) => state.data.push(newSkill),
-    removeSkill: (state, skillId) => state.data = state.data.filter(skill => skill.id !== skillId)
+    removeSkill: (state, skillId) => state.data = state.data.filter(skill => skill.id !== skillId),
+    editSkill: (state, editedSkill) => state.data = state.data.map(skill => {
+      return skill.id === editedSkill.id ? editedSkill : skill
+    }) 
   },
   actions: {
     fetch({commit}) {
@@ -38,6 +41,20 @@ const skills = {
           console.error(error);
         }
       );
+    },
+    edit({commit}, skill) {
+      const formData = new FormData();
+
+      Object.keys(skill).forEach(key => formData.append(key, skill[key]));
+
+      return this.$axios.post(`/skills/${skill.id}`, formData).then(
+        response => {
+          commit('editSkill', response.data.skill);
+          return response
+        }).catch(error => {
+          console.log(error);
+          return Promise.reject(error);
+        })
     }
   }
 };

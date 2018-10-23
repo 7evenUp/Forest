@@ -1,6 +1,6 @@
 <template lang="pug">
   form.form
-    h3.form__title(v-text="editMode ? 'Изменить работу' : 'Добавить работу'")
+    h3.form__title(v-text="mode ? 'Изменить работу' : 'Добавить работу'")
     input.form__input(
       v-model="newWork.title"
       type="text"
@@ -66,7 +66,6 @@
         this.newWork.techs = this.work.techs;
         this.newWork.link = this.work.link;
         document.querySelector('.file__image').src = `https://webdev-api.loftschool.com/${this.work.photo}`
-
         this.mode = true;
       }
     },
@@ -167,8 +166,8 @@
     &__image {
       fill: #6c9c5a;
       margin-right: 10px;
-      max-width: 250px;
-      max-height: 180px;
+      max-width: 200px;
+      max-height: 160px;
     }
 
     &__label {

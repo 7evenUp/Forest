@@ -44,6 +44,11 @@
     border-radius: 10px;
     max-width: 626px;
 
+    @media (max-width: 980px) {
+      max-width: none;
+      width: 100%;
+    }
+
     &__caption {
       font-size: 16px;
       font-weight: 600;

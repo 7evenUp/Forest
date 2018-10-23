@@ -10,6 +10,7 @@
         )
         blogs-list(
           :blogs="blogs"
+          @fillFormData="fillFormData"
         )
 </template>
 
@@ -25,13 +26,13 @@
     },
     data() {
       return {
+        blog: {},
         editMode: false
       }
     },
     computed: {
       ...mapState('blogs', {
-        blogs: state => state.data,
-        blog: state => state.blog
+        blogs: state => state.data
       })
     },
     watch: {
@@ -45,7 +46,10 @@
     methods: {
       ...mapActions({
         fetchBlogs: 'blogs/fetch'
-      })
+      }),
+      fillFormData(blog) {
+        this.blog = blog;
+      }
     }
   }
 </script>

@@ -3,15 +3,16 @@
     td.blog-item__name {{ blog.title }}
     td.blog-item__date {{ convertDate(blog.date) }}
     td.blog-item__content {{ blog.content }}
-    td.blog-item__buttons
-      button(
-        @click="editBlog(blog)"
-        type="button"
-      ).button.button--edit
-      button(
-        @click="removeBlog(blog.id)"
-        type="button"
-      ).button.button--delete
+    td
+      .blog-item__buttons
+        button(
+          @click="handleClick"
+          type="button"
+        ).button.button--edit
+        button(
+          @click="removeBlog(blog.id)"
+          type="button"
+        ).button.button--delete
 </template>
 
 <script>
@@ -29,6 +30,9 @@
         editBlog: 'blogs/edit',
         removeBlog: 'blogs/remove'
       }),
+      handleClick() {
+        this.$emit('fillFormData', this.blog)
+      },
       convertDate(date) {
         return new Date(date * 1000).toLocaleDateString();
       }

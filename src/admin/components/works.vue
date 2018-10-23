@@ -32,8 +32,7 @@
     },
     computed: {
       ...mapState('works', {
-        works: state => state.data,
-        // work: state => state.work
+        works: state => state.data
       })
     },
     created() {

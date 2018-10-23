@@ -1,6 +1,6 @@
 <template lang="pug">
-  form(v-if="editMode === false").form
-    h3.form__title Добавить запись
+  form.form
+    h3.form__title(v-text="mode ? 'Изменить запись' : 'Добавить запись'")
     input.form__input(
       v-model="newBlog.title"
       id="title"
@@ -19,36 +19,10 @@
       placeholder="Чего-нибудь новенького?"
     )
     button.form__button(
-      @click="addNewBlog(newBlog)"
+      v-text="mode ? 'Сохранить изменения' : 'Добавить'"
+      @click="mode ? editExistedBlog(newBlog) : addNewBlog(newBlog)"
       type="button"
-    ) Добавить
-
-  form(v-else).form
-    h3.form__title Изменить запись
-    input.form__input(
-      v-model="blog.title"
-      value="blog.title"
-      id="title"
-      type="text"
-      placeholder="Название поста"
     )
-    input.form__input(
-      v-model="blog.date"
-      value="blog.date"
-      id="date"
-      type="text"
-      placeholder="Дата"
-    )
-    textarea.form__textarea(
-      v-model="blog.content"
-      value="blog.content"
-      id="textarea"
-      placeholder="Чего-нибудь новенького?"
-    )
-    button.form__button(
-      @click="editBlog(blog); changeEditMode()"
-      type="button"
-    ) Сохранить изменения
 </template>
 
 <script>
@@ -68,10 +42,21 @@
     data() {
       return {
         newBlog: {
+          id: 0,
           title: '',
           date: '',
           content: ''
-        }
+        },
+        mode: this.editMode
+      }
+    },
+    watch: {
+      blog() {
+        this.newBlog.id = this.blog.id;
+        this.newBlog.title = this.blog.title;
+        this.newBlog.date = new Date(this.blog.date * 1000).toLocaleDateString();
+        this.newBlog.content = this.blog.content;
+        this.mode = true;
       }
     },
     methods: {
@@ -79,8 +64,13 @@
         addNewBlog: 'blogs/add',
         editBlog: 'blogs/edit'
       }),
-      changeEditMode() {
-        this.editMode = false;
+      editExistedBlog(blog) {
+        this.editBlog(blog).then(() => {
+          Object.keys(this.newBlog).forEach(key => this.newBlog[key] = '');
+          this.mode = false;
+        }).catch(error => {
+          alert(error);
+        })
       }
     }
   }

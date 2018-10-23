@@ -5,16 +5,18 @@
     td.work-item__link
       a(:href="work.link" target="_blank")  {{ work.link }}
     td.work-item__image
-      img#image(:src="`https://webdev-api.loftschool.com/${work.photo}`" alt="Изображение проекта")
-    td.work-item__buttons
-      button(
-        @click="handleClick"
-        type="button"
-      ).button.button--edit
-      button(
-        @click="removeWork(work.id)"
-        type="button"
-      ).button.button--delete
+      .work-item__image--overlay
+        img#image(:src="`https://webdev-api.loftschool.com/${work.photo}`" alt="Изображение проекта")
+    td
+      .work-item__buttons
+        button(
+          @click="handleClick"
+          type="button"
+        ).button.button--edit
+        button(
+          @click="removeWork(work.id)"
+          type="button"
+        ).button.button--delete
 </template>
 
 <script>
@@ -71,19 +73,22 @@
     }
 
     &__image {
-      max-width: 90%;
-      max-height: 90%;
+      &--overlay {
+        display: flex;
+        justify-content: center;
+      }
     }
 
     &__buttons {
       display: flex;
       flex-direction: column;
       height: 100%;
+      padding: 10px;
     }
 
     #image {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 120px;
+      max-height: 120px;
     }
     
     .button {

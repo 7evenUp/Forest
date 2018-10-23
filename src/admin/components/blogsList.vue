@@ -10,6 +10,7 @@
       v-for="blog in blogs"
       :key="blog.id"
       :blog="blog"
+      @fillFormData="fillFormData"
     )
 
 </template>
@@ -25,6 +26,11 @@
       blogs: {
         type: Array,
         default: () => []
+      }
+    },
+    methods: {
+      fillFormData(blog) {
+        this.$emit('fillFormData', blog);
       }
     } 
   }
