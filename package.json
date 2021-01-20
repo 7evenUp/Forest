@@ -72,7 +72,7 @@
   ],
   "dependencies": {
     "axios": "^0.18.0",
-    "gsap": "^2.0.2",
+    "gsap": "^3.6.0",
     "normalize.css": "^7.0.0",
     "promptly": "^3.0.3",
     "pug": "^2.0.3",
